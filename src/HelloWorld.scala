@@ -8,13 +8,13 @@
 object HelloWorld {
   def main(args:Array[String]) {
     println("hello,World!")
-    test("exercise.exercise_charter3.arg")
+    test("exercise.startUp.arg")
     test2()
     operator()
   }
 
   def test(string:String){
-    println("i'm only a exercise.exercise_charter3 case !" + string)
+    println("i'm only a exercise.startUp case !" + string)
   }
 
   def test2(){
