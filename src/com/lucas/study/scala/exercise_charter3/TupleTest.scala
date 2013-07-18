@@ -9,11 +9,12 @@ package com.lucas.study.scala.exercise_charter3
  */
 object TupleTest {
   def main(args:Array[String]) {
-    testTuple()
+    firstTuple()
+    footballTeam()
   }
 
-  def testTuple() {
-    val pair = (321,"Lucas")
+  def firstTuple() {
+    val pair = (20130718,"Lucas@lucas.com")
     println(pair)
     println(pair._1)
     println(pair._2)
@@ -26,5 +27,19 @@ object TupleTest {
     println(mulPairValue._5)
     println(mulPairValue._6)
   }
+
+  /**
+   * List all famous football team in European
+   */
+  def footballTeam(){
+    val ENGLADN_BIG_FOUR = ("Liverpool","Arsenal","chelsea","Manchester Unit")
+    val SCOTLAND = ("Celtic","Scottish Team")
+    val ITALY = ("Rome","Lazio","AC Milan","Inner Milan","Juventus")
+    val SPAIN = ("REAL MADRID","BARCELONA")
+    val GERMAN = ("BAYER MUNICH","ERUOPEAN CUP","FAMOUS_FOOTBALL_PLAYER's Name:Franz")
+    var EURO_FOOTBALL_TEAM = (ENGLADN_BIG_FOUR,SCOTLAND,ITALY,SPAIN,GERMAN)
+    println(EURO_FOOTBALL_TEAM)
+  }
+
 
 }
