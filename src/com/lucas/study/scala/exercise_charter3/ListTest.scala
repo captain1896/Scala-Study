@@ -62,6 +62,7 @@ object ListTest {
     //println(thrill.drop(2))
     //println(thrill.dropRight(2))
     println(thrill.exists(s => s == "until"))
+    println(thrill.exists(s => s == "until"))
     println("thrill elements\'s length equals 4 :" + thrill.filter(s => s.length == 4))
     //判断thrill里面的元素是否都是以"ll"结束
     println( thrill +  "|"+ thrill.forall(s => s.endsWith("ll")))
@@ -79,7 +80,6 @@ object ListTest {
     println(thrill.reverse)
     println(thrill.sort((s,t) => s.charAt(0).toLowerCase < t.charAt(0).toLowerCase))
     println(thrill.tail)
-
 
 
   }
