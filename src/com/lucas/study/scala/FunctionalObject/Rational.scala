@@ -35,9 +35,25 @@ class Rational(n : Int , d : Int){
     denom * that.denom
   )
 
+  def + (i:Int):Rational = new Rational(numer + i * denom ,denom )
+
+  def - (that :Rational) :Rational = new Rational(
+    numer * that.denom - that.numer * denom,
+    denom * that.denom
+  )
+
+  def - (i : Int):Rational = {
+    new Rational(numer - i * denom, denom)
+  }
+
   def *(that:Rational) : Rational = new Rational (
     numer * that.numer , denom * that.denom
   )
+
+  def *(i : Int) :Rational = new Rational(numer * i ,denom)
+
+  def /(that:Rational):Rational = new Rational(numer * that.denom,denom * that.numer)
+  def /(i :Int) :Rational = new Rational(numer,denom * i)
 
   def lessThan(that:Rational) ={
     this.numer * that.denom < that.numer * this.denom
@@ -48,6 +64,10 @@ class Rational(n : Int , d : Int){
 
   private def gcd(a:Int , b : Int): Int =
     if (b == 0 ) a else gcd (b, a % b)
+
+  //隐式转换起作用，需要定义在作用范围之内。如果你把饮食方法定义放在类Rational之内，它就不在解析器的作用范围。
+  //目前，只能在解析器内直接定义它。
+  //implicit def intToRational(x:Int) = new Rational(x)
 }
 
 object Rational {
@@ -64,5 +84,7 @@ object Rational {
     println(y)
     println(twoThirds + oneTwoHundredAndOne)
     println(oneHalf * twoThirds)
+    println(oneHalf - 3)
+    println(oneHalf * 2)
   }
 }
