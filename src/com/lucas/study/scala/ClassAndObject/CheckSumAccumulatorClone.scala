@@ -37,15 +37,20 @@ object CheckSumAccumulator {
       }
       val cs = acc.checksum()
       cache += (s -> cs)
+      //这行不能删除,类似于Java的返回值来的
       cs
 
     }
   }
 
+
   def testOperator() ={
     val sum = 1 + 2
     println(sum)
     println((1).+(2))
+    println((3.9).unary_-)
+    println((89).unary_~)
+    println(~89)
   }
 
   def main(args:Array[String]) {
