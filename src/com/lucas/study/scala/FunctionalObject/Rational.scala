@@ -16,13 +16,14 @@ package com.lucas.study.scala.FunctionalObject
  */
 class Rational(n : Int , d : Int){
   require( d != 0)
-  val numer: Int = n
-  val denom:Int = d
+  private val g = gcd (n.abs , d.abs)
+  val numer = n / g
+  val denom = d / g
 
   def this(n : Int) = this(n,1) //辅助构造器
   //Scala编译器将把类内部的任何既不是字段也不是方法定义的代码编译至主构造器中，
   //Scala编译器将这段代码的println调用放进Rational的主构造器。因此，println调用将在每次创建新的Rational实例打印这样一条信息。
-  override def toString = n + "/" + d
+  override def toString = numer + "/" + denom
 
   def add(that:Rational):Rational = new Rational(
     numer * that.denom + that.numer * denom ,
@@ -35,6 +36,9 @@ class Rational(n : Int , d : Int){
 
   def max(that:Rational) =
     if (this.lessThan(that)) that else this
+
+  private def gcd(a:Int , b : Int): Int =
+    if (b == 0 ) a else gcd (b, a % b)
 }
 
 object Rational {
@@ -42,7 +46,7 @@ object Rational {
     val oneHalf = new Rational(1,2)
     val twoThirds = new Rational(2,3)
     val elevenTwos = new Rational(11,2)
-    val oneTwoHundredAndOne = new Rational(1,201)
+    val oneTwoHundredAndOne = new Rational(150,200)
     //val oneZero = new Rational(1,0)
     println(oneHalf.add(twoThirds))
     println(oneHalf.lessThan(twoThirds))
