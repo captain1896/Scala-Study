@@ -30,6 +30,15 @@ class Rational(n : Int , d : Int){
     denom * that.denom
   )
 
+  def +(that:Rational):Rational = new Rational(
+    numer * that.denom + that.numer * denom,
+    denom * that.denom
+  )
+
+  def *(that:Rational) : Rational = new Rational (
+    numer * that.numer , denom * that.denom
+  )
+
   def lessThan(that:Rational) ={
     this.numer * that.denom < that.numer * this.denom
   }
@@ -46,12 +55,14 @@ object Rational {
     val oneHalf = new Rational(1,2)
     val twoThirds = new Rational(2,3)
     val elevenTwos = new Rational(11,2)
-    val oneTwoHundredAndOne = new Rational(150,200)
+    val oneTwoHundredAndOne = new Rational(1500000000,2000000000)
     //val oneZero = new Rational(1,0)
     println(oneHalf.add(twoThirds))
     println(oneHalf.lessThan(twoThirds))
     println(oneHalf.max(oneTwoHundredAndOne))
     val y = new Rational(45)
     println(y)
+    println(twoThirds + oneTwoHundredAndOne)
+    println(oneHalf * twoThirds)
   }
 }
