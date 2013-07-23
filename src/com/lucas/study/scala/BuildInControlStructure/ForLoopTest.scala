@@ -17,6 +17,8 @@ class ForLoopTest{
 object ForLoopTest {
   def main(args:Array[String]) {
     listFiles
+    testMatchCase
+    testMatchCase2
   }
 
   def listFiles() {
@@ -58,5 +60,39 @@ object ForLoopTest {
         line <- fileLines(file)
       if line.trim.matched(pattern)
     ) println(file + ":" + line.trim)*/
+
+  /*val forLineLengths =
+    for {
+      file <- fileHere
+      if file.getName.endsWith(".scala")
+      line <- fileLines(file)
+      trimmed = line.trim
+      if trimmed.matches(".*for.*")
+    } yield trimmed.length*/
+
+  def testMatchCase() {
+    val args = Array[String]("salt", "", "")
+    val firstArg = if (args.length > 0) args(0) else ""
+    firstArg match {
+      case "salt" => println("case value :pepper")
+      case "chips" => println("case value :salsa")
+      case "eggs" => println("case value :bacon")
+      case _ => println("huh?")
+    }
+    println("firstArg:" + firstArg)
+  }
+
+  def testMatchCase2() {
+    val args = Array[String]("salt", "", "")
+    val firstArg = if (!args.isEmpty) args(0) else ""
+    val friend = firstArg match {
+      case "salt" => "pepper"
+      case "chips" => "salsa"
+      case "eggs" => "bacon"
+      case _  => "huh?"
+    }
+    println(friend)
+  }
+
 
 }
