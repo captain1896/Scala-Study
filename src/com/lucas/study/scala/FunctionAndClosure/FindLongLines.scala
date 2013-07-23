@@ -14,5 +14,9 @@ object FindLongLines {
     val width = args(0).toInt
     for(arg <- args.drop(1))
       LongLines.processFileWithLocalFunctionRefactor(arg,width)
+    //Object定义的方法相当于Java中的静态方法一样
+    LongLines.printIncrease()
+    LongLines.sayHelloTo("Mary")
+    LongLines.printLsitNumber
   }
 }
