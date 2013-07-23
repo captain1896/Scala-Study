@@ -80,5 +80,14 @@ object LongLines {
     val greateTZero = someNumber.filter((x:Int) => x > 0)
     println()
     println(greateTZero)
+
+    val alseGreateTZero = someNumber.filter(x => x > 50)
+    println(alseGreateTZero)
+
+    //如果想让函数字面量更简洁，可以把下划线当做一个或者更多参数的占位符，只需要每个参数在函数字面量内仅出现一次。
+    //比如，_ > 0 对于检查值是否大于零的函数来说就是非常简单的标注：
+    //可以把下划线看作表达式里需要被填入的空白，这个空白咋每次函数调用的时候用函数的参数填入。
+    val alsoGreateTZero = someNumber.filter(_ > 0)
+    println(alsoGreateTZero)
   }
 }
