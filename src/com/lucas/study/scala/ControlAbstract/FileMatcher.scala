@@ -127,6 +127,7 @@ object FileMatcher {
     }
   }
 
+  //傳名參數:by name parameter
   def testMyAssert() {
     val assertionEnabled = true
     def myAssert(predicate : () => Boolean) =
