@@ -1,6 +1,7 @@
 package com.lucas.study.scala.ControlAbstract
 
 import java.io.File
+import java.io.PrintWriter
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,35 +12,36 @@ import java.io.File
  */
 object FileMatcher {
   private def filesHere = (new File(("."))).listFiles
-/*  def filesEnding(query:String) =
-    for (file <- filesHere; if file.getName.endsWith("query"))
-       yield file
 
-  def filesContaining(query :String) =
-    for (file <- filesHere; if file.getName.contains(query))
-      yield file
+  /*  def filesEnding(query:String) =
+      for (file <- filesHere; if file.getName.endsWith("query"))
+         yield file
 
-  def filesRegex(query:String) =
-    for (file <- filesHere;if file.getName.matches(query))
-      yield file*/
+    def filesContaining(query :String) =
+      for (file <- filesHere; if file.getName.contains(query))
+        yield file
 
-  def filesMatching(query:String, matcher:(String,String) => Boolean) ={
-    for (file <- filesHere; if matcher(file.getName,query))
-      yield file
+    def filesRegex(query:String) =
+      for (file <- filesHere;if file.getName.matches(query))
+        yield file*/
+
+  def filesMatching(query: String, matcher: (String, String) => Boolean) = {
+    for (file <- filesHere; if matcher(file.getName, query))
+    yield file
   }
 
-  def filesEndings(query:String) =
-    filesMatching(query,_.endsWith(_))
+  def filesEndings(query: String) =
+    filesMatching(query, _.endsWith(_))
 
-  def fileContainingS(query:String) =
+  def fileContainingS(query: String) =
     filesMatching(query, _.contains(_))
 
-  def filesRegexS(query:String) =
-    filesMatching(query,_.matches(_))
+  def filesRegexS(query: String) =
+    filesMatching(query, _.matches(_))
 
-  def containsNeg(nums: List[Int]) : Boolean = {
+  def containsNeg(nums: List[Int]): Boolean = {
     var exists = false
-    for (num <- nums )
+    for (num <- nums)
       if (num < 0)
         exists = false
     exists
@@ -62,18 +64,19 @@ object FileMatcher {
   //這個版本裏面額代碼再一次體會與相應的containsNeg方法的保持一致（使用了exists的版本），
   //除了搜索的條件不同。然而代碼重複的量確實少很多，因為所有的循環架構都被提取成exists方法本身了。
   //Scala的標準庫本身還有許多其他循環方法，如果你能發現使用它們的機會，那麼像exists一樣，它們經常能縮短你的代碼
-  def containsOddHigherEdition(nums: List[Int]) = nums.exists( _ % 2 == 1)
+  def containsOddHigherEdition(nums: List[Int]) = nums.exists(_ % 2 == 1)
 
   def plainOldSum(x: Int, y: Int) = x + y
 
   def curriedSum(x: Int)(y: Int) = x + y
+
   //在計算機科學中，柯里化是把接受多個參數的函數變換成接受一個單一參數（最初函數的第一個參數）的函數，
   //並且返回接受餘下的參數而且返回結果的新函數的技術。這個技術又christopher Strachey以邏輯學家Haskell Curry命名的，
   //尽管它是 Moses Schnfinkel 和 Gottlob Frege 发明的。
   //這裡發生的事情是當你調用curriedSum時，實際上連接調用了兩個傳統函數。
   //第一個函數調用帶單個的名為x的Int參數，並且返回第二函數的函數值。第二個函數帶Int參數y。
   //下面的名為first的函數實質上執行了curriedSum的第一個傳統函數調用會做的事情。
-  def first(x:Int) = (y:Int) => x + y
+  def first(x: Int) = (y: Int) => x + y
 
   def curriedFunction() {
     //柯里化就是不斷產生新函數的過程，并產生值。
@@ -83,22 +86,34 @@ object FileMatcher {
 
   //獲得市級指向curriedSumd的“第二個”參數的參考，可以用部份應用函數表達式方式，把占位符標注用在curriedSum裏面，如
   def curriedFunction2() {
-    val onePlus = curriedSum(1)_
+    val onePlus = curriedSum(1) _
     val result1 = onePlus(2)
-    val twoPlus = curriedSum(2)_
+    val twoPlus = curriedSum(2) _
     val result2 = twoPlus(2)
     println("-curried-->" + result1)
     println("-curried-->" + result2)
   }
 
-  def main(args:Array[String]) {
-    val listA = List[Int](1,2,3,4,5)
+  def withPrintWriter(file:File ,op:PrintWriter => Unit) {
+    val writer = new PrintWriter(file)
+    try {
+      op(writer)
+      println(file.getName)
+    } finally {
+      writer.close()
+    }
+
+  }
+
+  def main(args: Array[String]) {
+    val listA = List[Int](1, 2, 3, 4, 5)
     val listB = listA.map(_ * 2)
     print("listA:" + listA + "|ListB:" + listB)
     println("\n" + curriedSum(12)(2))
-    println("" + plainOldSum(12,2))
+    println("" + plainOldSum(12, 2))
     curriedFunction()
     curriedFunction2()
+    //withPrintWriter(new File("H:\\intellij_workspace\\scala-study\\src\\com\\lucas\\study\\scala\\FunctionAndClosure\\LongLines.scala"),writer => writer.println(new java.util.Date))
   }
 
 
