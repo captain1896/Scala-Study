@@ -94,7 +94,7 @@ object FileMatcher {
     println("-curried-->" + result2)
   }
 
-  def withPrintWriter(file:File ,op:PrintWriter => Unit) {
+  def withPrintWriter(file: File, op: PrintWriter => Unit) {
     val writer = new PrintWriter(file)
     try {
       op(writer)
@@ -105,6 +105,42 @@ object FileMatcher {
 
   }
 
+  //經過柯里化的函數=> 函數名（）（）...
+  def redefineWithPrintWriter(file: File)(op: PrintWriter => Unit) {
+    val writer = new PrintWriter(file)
+    try {
+      op(writer)
+    } finally {
+      writer.close()
+    }
+  }
+
+  //在這個例子裏面，第一個參數列包含了一個File參數，被寫成包圍在小括號中。
+  //第二個參數列表包含了一個函數參數，被包圍在花括號中。
+  def callRedefineWithPrintWriter() {
+    val file = new File("H:\\intellij_workspace\\scala-study\\src\\com\\lucas\\study\\scala\\ControlAbstract\\date.txt")
+
+    //這個是個編程技巧：，讓客戶代碼看上去更像內建控制結構的一種方式是使用花括號代替小括號包圍參數列表。
+    //Scala的任何方法調用，如果確實只傳入一個參數，就能可選地使用花括號代替小括號包圍參數
+    redefineWithPrintWriter(file) {
+      writer => writer.println("Writer Successfully At :" + new java.util.Date)
+    }
+  }
+
+  def testMyAssert() {
+    val assertionEnabled = true
+    def myAssert(predicate : () => Boolean) =
+      if (assertionEnabled && !predicate())
+        throw new AssertionError()
+    println("myAssert--->" + myAssert(() => 5 > 3))
+
+    def byNameAssert(predicate: => Boolean) =
+      if (assertionEnabled && !predicate)
+        throw new AssertionError()
+    println("byNameAssert--->" + byNameAssert(5 > 3))
+  }
+
+
   def main(args: Array[String]) {
     val listA = List[Int](1, 2, 3, 4, 5)
     val listB = listA.map(_ * 2)
@@ -113,7 +149,12 @@ object FileMatcher {
     println("" + plainOldSum(12, 2))
     curriedFunction()
     curriedFunction2()
+    println {
+      "Halo,こんにちは、私も、皆さん本当で良い！"
+    }
     //withPrintWriter(new File("H:\\intellij_workspace\\scala-study\\src\\com\\lucas\\study\\scala\\FunctionAndClosure\\LongLines.scala"),writer => writer.println(new java.util.Date))
+    callRedefineWithPrintWriter()
+    testMyAssert()
   }
 
 
