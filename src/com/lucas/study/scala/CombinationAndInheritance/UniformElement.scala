@@ -14,11 +14,11 @@ package com.lucas.study.scala.CombinationAndInheritance
  * 類層次結構
  *            Element
  *              \
- *        ------------------
- *       |                  |
- *   UniformElement     ArrayElement
+ *        ---------------------------------------
+ *       |                  |                    |
+ *   UniformElement     ArrayElement       LineElement
  *                          |
- *                     LineElement
+ *                     [ LineElement (修改后沒有了) ]
  *
  * @param ch
  * @param width

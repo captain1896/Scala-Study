@@ -7,7 +7,7 @@ package com.lucas.study.scala.CombinationAndInheritance.DynamicallyBound
  * Time: 下午3:03
  * To change this template use File | Settings | File Templates.
  */
-class LineElement extends ArrayElement {
+class LineElement extends Element {
   override def demo() {
     println("LineElement's implementation invoked!")
   }

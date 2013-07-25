@@ -11,4 +11,5 @@ abstract class Element {
   def demo() {
     println("Element's implementation invoked!")
   }
+
 }

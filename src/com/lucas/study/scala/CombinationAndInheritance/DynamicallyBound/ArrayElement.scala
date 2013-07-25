@@ -12,6 +12,10 @@ class ArrayElement extends Element{
     println("ArrayElement's implementation invoked!")
   }
 
+  /*def above (that:Element):Element = {
+    new ArrayElement(this.contents ++ contents)
+  }*/
+
   /**
    *有時候在設計一個繼承層級的時候，你想要確保一個成員不被子類重寫。
    *這在Scala中可以和Java一樣通過給成員添加final修飾符來實現。
