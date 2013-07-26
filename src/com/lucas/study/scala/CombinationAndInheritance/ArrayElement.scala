@@ -26,16 +26,29 @@ class ArrayElement(conts: Array[String]) extends Element {
   //++c操作鏈接兩個數組。Scala中的數組用Java數組表示，但是支持的方法更多。
   //具體來說，Scala中的數組繼承自Scala.Seq類，因此能夠表示類似序列的結構并包含了許多訪問和轉換序列的方法。
   //above方法，把一個元素放在另一個上面是鏈接這兩個元素的contents值，因此above方法的實現可以這樣實現：
-  def above(that: Element): Element = {
+  override def above(that: Element): Element = {
     new ArrayElement(this.contents ++ that.contents)
   }
 
-  def beside(that:Element):Element = {
+  //指令式風格
+  override def beside(that:Element) = {
     val contents = new Array[String](this.contents.length)
     for(i <- 0 until this.contents.length)
       contents(i) = this.contents(i) + that.contents(i)
     new ArrayElement(contents)
+
+    val vars = new ArrayElement(
+      for (
+        (line1, line2) <- this.contents zip that.contents
+      ) yield line1 + line2
+    )
+    println (vars)
+    vars
   }
+
+  override  def toString = contents mkString "\n"
+
+
 }
 
 object ArrayElement {
@@ -48,9 +61,12 @@ object ArrayElement {
     println(element.width)
 
     val ae = new ArrayElement(Array("hello", "world"))
+    val ad = new ArrayElement(Array("P1", "P2"))
     println("------------")
     println(ae.height)
     println(ae.width)
+    println(ad.above(ad))
+    println(ae.beside(ad))
   }
 }
 

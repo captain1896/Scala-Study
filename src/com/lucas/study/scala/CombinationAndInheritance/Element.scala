@@ -16,4 +16,17 @@ abstract class Element {
   //相對地，帶有空括號的方法定義，如def height():Int,被稱為空括號方法（empty-paren method）
   def width:Int = if (height == 0 ) 0 else contents(0).length
 
+  def above(that:Element):Element =
+    new ArrayElement(this.contents ++ that.contents)
+
+  def beside(that: Element): Element =
+    new ArrayElement(
+      for (
+        (line1, line2) <- this.contents zip that.contents
+      ) yield line1 + line2
+
+    )
+
+  override def toString = contents mkString "\n"
+
 }
