@@ -108,4 +108,12 @@ object Hierarchy {
   }
 
   def testError = divide(1,0)
+
+  /**
+   * Nothing類型在Scala的類層次的最底端；他是任何其他類型的子類型。
+   * 然而根本沒有這個類型的任何值。
+   * Nothing的一個用處是它標明了不正常的終止。
+   * 例如，Scala的標準庫中的Predef對象中一個error方法，error的返回類型是Nothing，告訴用戶方法不是正常返回的（代之以拋出異常）。
+   * 因為Nothing是任何其他類型的子類，所以你可以非常靈活地使用error這樣的方法，定義如下。
+   */
 }
