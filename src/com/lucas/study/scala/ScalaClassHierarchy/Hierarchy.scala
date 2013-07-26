@@ -12,6 +12,7 @@ object Hierarchy {
     AnyValHierarchyTestCase()
     AnyRefHierarchyTestCase()
     testIsEqual()
+    testError
   }
 
   /**
@@ -94,7 +95,17 @@ object Hierarchy {
 
 
   def testBaseHierarchy() = {
-
+   //val i :Int = null  //編譯的時候，編譯器編譯到這裡會報錯
   }
 
+  def error(message:String):Nothing = {
+    throw new RuntimeException(message)
+  }
+
+  def divide(x:Int, y:Int):Int = {
+    if(y != 0 ) x/y
+    else error("Can't divide by Zero, 淚奔了 !!")
+  }
+
+  def testError = divide(1,0)
 }
