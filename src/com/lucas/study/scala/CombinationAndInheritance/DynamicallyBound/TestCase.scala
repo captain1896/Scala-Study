@@ -1,5 +1,7 @@
 package com.lucas.study.scala.CombinationAndInheritance.DynamicallyBound
 
+import com.lucas.study.scala.CombinationAndInheritance.Element
+//import com.lucas.study.scala.CombinationAndInheritance.DynamicallyBound.Element
 /**
  * Created with IntelliJ IDEA.
  * User: Lucas
@@ -32,7 +34,15 @@ object TestCase {
     arr3.foreach( (s:String) => print(s + "\t") )
     arr3.foreach(s => println(s + "\t"))
 
-    println()
+    println("-----Factory Method Of Element------")
+
+    //create ArrayElement
+    Element.elem(Array("ArrayOne","ArrayTwo","ArrayThree"))
+    //create UniformElement
+    Element.elem('A',256,256)
+    //create LineElement
+    Element.elem("I'm Factory Method Test!")
+
   }
 
   /**

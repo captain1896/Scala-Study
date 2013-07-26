@@ -1,5 +1,7 @@
 package com.lucas.study.scala.CombinationAndInheritance
 
+import com.lucas.study.scala.CombinationAndInheritance.DynamicallyBound.ArrayElement
+
 /**
  * Created with IntelliJ IDEA.
  * User: Lucas
@@ -67,6 +69,9 @@ object ArrayElement {
     println(ae.width)
     println(ad.above(ad))
     println(ae.beside(ad))
+
+    val ee = new ArrayElement(Array("hello")) above new ArrayElement(Array("world!"))
+    println(ee)
   }
 }
 
