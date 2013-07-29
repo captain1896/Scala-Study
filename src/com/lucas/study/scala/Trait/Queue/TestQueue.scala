@@ -21,6 +21,7 @@ object TestQueue {
     testMyQueue
     testIncrementingQueue
     testFilteringQueue
+    testBasicIntQueueWithDoubling
   }
 
   def testMyQueue() {
@@ -42,5 +43,17 @@ object TestQueue {
     val queue = new FilteringQueue
     queue.put(-12)
     queue.put(12)
+  }
+
+  def testBasicIntQueueWithDoubling() {
+    println("testBasicIntQueueWithDoubling invoked!")
+    val queueD = new BasicIntQueue with Doubling
+    val queueI = new BasicIntQueue with Incrementing
+    val queueF = new BasicIntQueue with Filtering
+    queueD.put(123)
+    queueI.put(900)
+    queueF.put(200)
+    queueF.put(-200)
+    println()
   }
 }
