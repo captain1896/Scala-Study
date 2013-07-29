@@ -47,7 +47,7 @@ object TestQueue {
   }
 
   def testBasicIntQueueWithDoubling() {
-    println("testBasicIntQueueWithDoubling invoked!")
+    println("----testBasicIntQueueWithDoubling invoked!----s")
     val queueD = new BasicIntQueue with Doubling
     val queueI = new BasicIntQueue with Incrementing
     val queueF = new BasicIntQueue with Filtering
@@ -69,6 +69,7 @@ object TestQueue {
    * 一旦特質混入了類，你也可以稱其為一個混入（mixin）
    */
   def testTraitOrder() {
+    println("-----testTraitOrder invoked!----")
     val queue = new BasicIntQueue with Incrementing with Filtering
     queue.put(-1)
     queue.put(0)
