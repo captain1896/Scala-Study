@@ -11,6 +11,11 @@ class Foo extends Bar {
   override def bar(x:Int) = x
 }
 
+/**
+ * 堆疊是作用對象是對同一方法。
+ * 假設現在又trait1和trait2，trait1進行加一操作，trait2進行加二操作。
+ */
+
 object Foo {
   def main(args:Array[String]) {
     val foo1 = new Foo with Foo1 with Foo2
