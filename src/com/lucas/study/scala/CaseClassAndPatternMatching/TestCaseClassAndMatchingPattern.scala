@@ -23,6 +23,7 @@ object TestCaseClassAndMatchingPattern {
     testIsIntIntMap
     testSimplifyAdd
     testSimplifyAll
+    testMatchingPatternWithConstrutor
   }
 
   def testCaseClass() {
@@ -202,6 +203,13 @@ object TestCaseClassAndMatchingPattern {
     println("simplifyAll(BinOp(\"+\",Number(100,Number(0)))) ===>" + simplifyAll(BinOp("+", Number(100), Number(0))))
     println("simplifyAll(UnOp(\"-\",UnOp(\"-\",Number(1000)))) ===>" + simplifyAll(UnOp("-",UnOp("-",Number(1000)))))
     println("simplifyAll(BinOp(\"*\",Var(\"O\"),Number(1.0))) ===>" + simplifyAll(BinOp("*",Var("O"),Number(1.0))) )
+  }
+
+  def testMatchingPatternWithConstrutor() {
+    val exp = new BinOp("*",Number(500),Number(1))
+    val BinOp(op,left,right) = exp
+    println(exp)
+    println("Operator=" + op + "|left=" + left + "|right=" + right )
   }
 
 }
