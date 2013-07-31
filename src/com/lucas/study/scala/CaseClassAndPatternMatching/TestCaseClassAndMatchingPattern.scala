@@ -22,6 +22,7 @@ object TestCaseClassAndMatchingPattern {
     testTypedPattern
     testIsIntIntMap
     testSimplifyAdd
+    testSimplifyAll
   }
 
   def testCaseClass() {
@@ -169,14 +170,38 @@ object TestCaseClassAndMatchingPattern {
   //守衛模式定制匹配模式
   def simplifyAdd(e: Expr) = e match {
     case BinOp("+", x, y) if x == y =>
-      BinOp("*",x,Number(2))
+      BinOp("*", x, Number(2))
     case _ => e
   }
 
-  def testSimplifyAdd(){
-    println("simplifyAdd(BinOp(\"+\",Var(\"1\"),Var(\"1\"))) ===> " + simplifyAdd(BinOp("+",Var("1"),Var("1"))))
-    println("simplifyAdd(BinOp(\"+\",Var(\"1\"),Var(\"2\"))) ===> " + simplifyAdd(BinOp("+",Var("1"),Var("2"))))
-    println("simplifyAdd(BinOp(\"+\",Var(\"5\"),Var(\"5\"))) ===> " + simplifyAdd(BinOp("+",Var("5"),Var("5"))))
+  def testSimplifyAdd() {
+    println("simplifyAdd(BinOp(\"+\",Var(\"1\"),Var(\"1\"))) ===> " + simplifyAdd(BinOp("+", Var("1"), Var("1"))))
+    println("simplifyAdd(BinOp(\"+\",Var(\"1\"),Var(\"2\"))) ===> " + simplifyAdd(BinOp("+", Var("1"), Var("2"))))
+    println("simplifyAdd(BinOp(\"+\",Var(\"5\"),Var(\"5\"))) ===> " + simplifyAdd(BinOp("+", Var("5"), Var("5"))))
+  }
+
+  /**
+   * 模式重疊，第四個樣本包含了模式UnOp（op,e）;等內容，它匹配任何一元操作。
+   * 操作符和操作單元任選，它們相應地綁定變量op和e。
+   * 這個樣本中的可選表達式對操作元e進行遞歸調用simplifyAll方法並使用（可能是）簡化了的操作的操作元重建同樣的一元操作。
+   * 第五個樣本對BinOp是類似的：它是任意二院操作符的“全匹配”，並且對兩個操作元遞歸調用了簡化方法。
+   * @param expr
+   * @return
+   */
+  def simplifyAll(expr: Expr): Expr = expr match {
+    case UnOp("-", UnOp("-", e)) => simplifyAll(e)
+    case BinOp("+", e, Number(0)) => simplifyAll(e)
+    case BinOp("*", e, Number(1)) => simplifyAll(e)
+    case UnOp(op, e) => UnOp(op, simplifyAll(e))
+    case BinOp(op, Number(1), r) => BinOp(op, simplifyAll(Number(1)), simplifyAll(r))
+    case _ => expr
+  }
+
+
+  def testSimplifyAll() {
+    println("simplifyAll(BinOp(\"+\",Number(100,Number(0)))) ===>" + simplifyAll(BinOp("+", Number(100), Number(0))))
+    println("simplifyAll(UnOp(\"-\",UnOp(\"-\",Number(1000)))) ===>" + simplifyAll(UnOp("-",UnOp("-",Number(1000)))))
+    println("simplifyAll(BinOp(\"*\",Var(\"O\"),Number(1.0))) ===>" + simplifyAll(BinOp("*",Var("O"),Number(1.0))) )
   }
 
 }
