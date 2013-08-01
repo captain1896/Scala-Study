@@ -11,6 +11,7 @@ object ListTest {
   def main(args: Array[String]) {
     basicManipulation
     testInsertSort
+    testInsertSort2
   }
 
 
@@ -107,7 +108,23 @@ object ListTest {
     val newNums = isort(nums)
     println(newNums)
     println(insert(999, newNums))
-    println(insert(123902,Nil))
+    println(insert(123902, Nil))
+  }
+
+  def isort2(xs: List[Int]): List[Int] =
+    if (xs.isEmpty) Nil
+    else insert(xs.head, isort2(xs.tail))
+
+  def insert2(x: Int, xs: List[Int]): List[Int] =
+    if (xs.isEmpty || x <= xs.head) x :: xs
+    else xs.head :: insert2(x, xs.tail)
+
+  def testInsertSort2() {
+    val numbers = List[Int](55,33,11,22,663)
+    println(numbers)
+    println(isort2(numbers))
+    println(insert2(990,isort2(numbers)))
+    println(insert2(9,isort2(numbers)))
   }
 
 
