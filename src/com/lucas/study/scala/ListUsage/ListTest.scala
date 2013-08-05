@@ -12,6 +12,8 @@ object ListTest {
     basicManipulation
     testInsertSort
     testInsertSort2
+    testListMatchingPattern
+    testIsortWithMatchingPattern
   }
 
 
@@ -127,5 +129,30 @@ object ListTest {
     println(insert2(9,isort2(numbers)))
   }
 
+  def testListMatchingPattern() {
+    val fruit = "apples" :: ("orange" :: ("pears" :: Nil))
+    val List(a,b,c) = fruit
+    val x::y::rest = fruit
+    println(a + "|" + b +"|" + c)
+    println(x + "|" + y +"|" + rest)
+  }
+
+  def isortWithMatchingPattern(xs:List[Int]):List[Int]= xs match {
+    case List() => List()
+    case x :: xs1 => insertWithMatchingPattern(x,isortWithMatchingPattern(xs1))
+  }
+
+  def insertWithMatchingPattern(x:Int ,xs :List[Int]):List[Int] = xs match {
+    case List() => List(x)
+    case y :: ys => if (x <= y) x::xs
+      else y::insertWithMatchingPattern(x,ys)
+  }
+
+
+  def testIsortWithMatchingPattern() {
+    val numbers = List[Int](55,33,11,22,663)
+    println(isortWithMatchingPattern(numbers))
+    println(insertWithMatchingPattern(100000,isortWithMatchingPattern(numbers)))
+  }
 
 }
