@@ -155,4 +155,5 @@ object ListTest {
     println(insertWithMatchingPattern(100000,isortWithMatchingPattern(numbers)))
   }
 
+
 }
