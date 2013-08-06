@@ -140,7 +140,5 @@ object ListHigherOrder {
     println("v2=" + v2)
     println("v3=" + v3)
 
-
-
   }
 }
