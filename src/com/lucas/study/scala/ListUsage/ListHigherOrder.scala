@@ -10,6 +10,11 @@ package com.lucas.study.scala.ListUsage
 object ListHigherOrder {
   def main(args: Array[String]) {
     test
+    testFolder
+    testRightFolder
+    testReverseLeft
+    testSort
+    listObjectMethod
   }
 
   def test() {
@@ -61,12 +66,81 @@ object ListHigherOrder {
     testHasZeroRow
   }
 
-  def hasZeroRow(m:List[List[Int]]) =
+  def hasZeroRow(m: List[List[Int]]) =
     m exists (row => row.forall(e => e == 0))
 
   def testHasZeroRow() {
-    val matrix = List(List(0,0,10,0,0),List(0,0,0,20,0),List(0,0,0,0,0))
+    val matrix = List(List(0, 0, 10, 0, 0), List(0, 0, 0, 20, 0), List(0, 0, 0, 0, 0))
     val result = hasZeroRow(matrix)
     println(result)
+  }
+
+  def sum(xs: List[Int]): Int = (0 /: xs)(_ + _)
+
+  def product(xs: List[Int]): Int = (1 /: xs)(_ * _)
+
+  //List的折叠列表測試
+  def testFolder() {
+    println(sum(List(22, 22, 22)))
+    println(product(List(10, 10, 10)))
+  }
+
+  def sumRight(xs: List[Int]): Int = (xs :\ 0)(_ + _)
+
+  def productRight(xs: List[Int]): Int = (xs :\ 1)(_ * _)
+
+  def testRightFolder() {
+    println(sumRight(List(1, 1, 1)))
+    println(productRight(List(2, 2, 2)))
+  }
+
+  def reverseLeft[T](xs: List[T]) =
+    (List[T]() /: xs) {
+      (ys, y) => y :: ys
+    }
+
+
+  def testReverseLeft() {
+    val afterReverse = reverseLeft(List(0, 1, 2, 3, 4, 5))
+    println(afterReverse)
+  }
+
+  def testSort() {
+    val list = List(1, -3, 4, 2, 6)
+    val sortList = list.sort(_ < _)
+    println(sortList)
+    val rangeList1 = List.apply(1, 2, 3, 4, 5)
+    val rangeList2 = List.range(9, 1, -3)
+    val rangeList3 = List.range(15, 0, -2)
+    println(rangeList1)
+    println(rangeList2)
+    println(rangeList3)
+  }
+
+  def listObjectMethod() {
+    val n1 = List.make(5, "Ooops")
+    println(n1)
+    val zipped = "abcde".toList zip List(1, 2, 3)
+    println(zipped)
+
+    val n2 = List.unzip(zipped)
+    println(n2)
+
+    val xss = List(List(List('a', 'b'), List('c'), List('e', 'f', 'g')),List(List('a', 'b'), List('c'), List('e', 'f', 'g')))
+    val flattenList = List.flatten(xss)
+    println(flattenList)
+
+    val concatList = List.concat(List('a','b'),List('c'),List('d','e','f'))
+    println(concatList)
+
+    val v1 = List.map2(List(10,20),List(3,4,5))(_ * _)
+    val v2 = List.forall2(List("abc","de"),List(3,2)) (_.length == _)
+    val v3 = List.exists2(List("abc","de"),List(3,2))(_.length != _)
+    println("v1=" + v1)
+    println("v2=" + v2)
+    println("v3=" + v3)
+
+
+
   }
 }
