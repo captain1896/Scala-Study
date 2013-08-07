@@ -50,7 +50,7 @@ object Hierarchy {
   //正如前面提到的，在Java平臺上AnyRef實際就是Java.lang.Object的別名。因此Java裏寫的類和Scala里寫的都繼承自AnyRef。
   //你可以認為java.lang.Object是Java平臺上實現AnyRef的方式。
   //因此，儘管在Java平臺上的Scala程序里Object和AnyRef的使用是可交換的，推薦的風格是在任何地方都只使用AnyRef。
-  //Scala類與Java類的不同在於它們還繼承自一個名為ScalaObejct的特別的記號特質（Special marker trait）。
+  //Scala類與Java類的不同在於它們還繼承自一個名為ScalaObejct的特別的記號特質（Special marker Trait）。
   //只想要通過ScalaObject包含的Scala編譯器定義和實現的方法讓Scala程序的執行更高效。
   // 到現在為止，ScalaObject只包含一個方法，名為$tag,在內部使用以加速模式匹配
 
