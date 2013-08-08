@@ -34,26 +34,26 @@ object Greeter {
   }
 
 
-  def maxListUpBound[T](elements: List[T])(implicit orderer:T => Ordered[T]): T = elements match {
+  def maxListUpBound[T](elements: List[T])(implicit orderer: T => Ordered[T]): T = elements match {
     case List() =>
       throw new IllegalArgumentException("empty list!")
 
     case List(x) => x
 
     case x :: rest =>
-      val maxRest = maxListUpBound(rest)
-      if(x > maxRest) x
+      val maxRest = maxListUpBound(rest) //隱式轉換出(orderer)
+      if (x > maxRest) x                 //隱式轉換出orderer(x)
       else maxRest
   }
 
   def testMaxListUpBound() {
-    val max1 =  maxListUpBound(List(1,34,54,3,2,65,77,8,99,11,25,806,100000000))
+    val max1 = maxListUpBound(List(1, 34, 54, 3, 2, 65, 77, 8, 99, 11, 25, 806, 100000000))
     println(max1)
 
-    val max2 =  maxListUpBound(List(1.5,5.2,10.7,3,1544343))
+    val max2 = maxListUpBound(List(1.5, 5.2, 10.7, 3, 1544343))
     println(max2)
 
-    val max3 =  maxListUpBound(List("one","two","three"))
+    val max3 = maxListUpBound(List("one", "two", "three"))
     println(max3)
   }
 
