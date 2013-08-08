@@ -12,6 +12,9 @@ object ImplicitTest {
     test
   }
 
+  /**
+   * 這種是隱式類型轉換為期望類型
+   */
   implicit def doubleToInt(x: Double) = x.toInt
 
   def test() {
