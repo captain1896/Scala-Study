@@ -12,6 +12,8 @@ object ForTest {
     test
     test2
     testForQuery
+    testForEach
+    testForAndMapConvertion
   }
 
   /**
@@ -102,7 +104,7 @@ object ForTest {
     } yield a1
 
     println(authorsWithTwoBook)
-    val  pureResult= removeDuplivates(authorsWithTwoBook)
+    val pureResult = removeDuplivates(authorsWithTwoBook)
     println(pureResult)
   }
 
@@ -113,6 +115,21 @@ object ForTest {
         xs.tail.filter(x => x != xs.head)
       )
     // for (x <- xs.tail if x != xs.head) yield x
+  }
+
+  def testForEach() {
+    var sum = 0
+    val numbers = List(1, 2, 3, 4, 5)
+    numbers.foreach(x => {
+      if (x >= 3) sum += x
+    })
+    println(sum)
+  }
+
+  def testForAndMapConvertion() {
+    val numbers = List(1,2,4)
+    val numStr = numbers.map(x => x.toString)
+    println(numStr)
   }
 
 
