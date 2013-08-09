@@ -18,6 +18,7 @@ object ListTest {
     testIncAll
     testIncAll2
     testListBuffer
+    testListBufferChangeOrNotBeforeInvokeToList
   }
 
   //類型參數前的+號特指列表是協變的，因為這一屬性。比如，List[Int]類型可以誒類型為List[Any]的變量
@@ -123,6 +124,26 @@ object ListTest {
     println("---buf ListBuffer----")
     println(forBuf)
     println(forBuf.toList)
+  }
+
+
+  def testListBufferChangeOrNotBeforeInvokeToList() {
+    val buf = new ListBuffer[Int]
+    buf += 1
+    buf += 2
+    buf += 3
+
+    println(buf)
+    val buf1 = buf
+    for (i <- 100 to 10000) {
+      buf += i
+      println(buf == buf1)
+      buf.toList
+    }
+    buf.toList
+    println(buf.eq(buf1))
+    println(buf)
+
   }
 
 }
