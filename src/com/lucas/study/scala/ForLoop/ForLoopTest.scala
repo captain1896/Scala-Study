@@ -9,13 +9,13 @@ package com.lucas.study.scala.ForLoop
  */
 object ForLoopTest {
   def main(args: Array[String]) {
-           println(test)
+    println(test)
   }
 
-  def test():Int =  {
+  def test(): Int = {
     var sum = 0
     for (i <- 1 to 100; if i % 2 != 0) {
-        sum += i*i
+      sum += i * i
     }
     sum
   }
