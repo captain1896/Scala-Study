@@ -28,6 +28,6 @@ object AnnotationTest {
     val test = new AnnotationTestCase
 
     //@unchecked 注解由編譯器在模式匹配的時候解釋，它告訴編譯器不要擔心match表達式忽略了某些情況。
-    @unchecked UNchecked = ""
+    @unchecked val UNchecked = ""
   }
 }
