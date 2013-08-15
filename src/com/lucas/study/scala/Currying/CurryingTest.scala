@@ -13,7 +13,8 @@ object CurryingTest {
       println(add2(1)(2, 3))
       println(add3(1)(2)(3))*/
     //testForLoop
-    testList
+    //testList
+    testTuple
   }
 
   def add1(x: Int, y: Int, z: Int): Int = x + y + z
@@ -66,6 +67,41 @@ object CurryingTest {
     }
 
     println(Nil.equals(List()))
+  }
+
+
+  def testTuple() {
+    val str = List[String]("Aladin", "Mikey")
+    val strWithIndex = str.zipWithIndex
+    println(strWithIndex)
+    val indexAndString = for {
+      s <- strWithIndex
+      value = s._1
+      index = s._2
+    } yield (index, value)
+
+    println(indexAndString)
+    println(str.mkString("|"))
+    val it = str.elements
+    while (it.hasNext)
+      println(it.next)
+
+    val newStrList = List[String]("bbc", "news", "report").map(s => s.toUpperCase())
+    println(newStrList)
+    val newStrList2 = newStrList.map(s => s.toList.reverse)
+    println(newStrList2)
+
+    println(newStrList.flatMap(_.toList))
+    def convertToOptionType(str: String): Option[String] = if (str.contains("E")) Some(str)  else None
+    val convertStr = newStrList.map(s => convertToOptionType(s))
+    println(convertStr.flatMap(o => o.getOrElse("EMPTY")))
+
+    val multiList = List[List[String]](List[String]("@@","@@","@@"),List[String]("##","##","##"),List[String]("&&","&&","&&"))
+    println(multiList.flatMap(l => l.map(_.contains("@@"))))
+
+    val mutilTypeList = List(List("QQ","",""),List("QQ","",""),List("QQ","",""))
+    println(List.flatten(mutilTypeList))
+
   }
 
 }
