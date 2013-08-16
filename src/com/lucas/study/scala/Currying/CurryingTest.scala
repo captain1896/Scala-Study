@@ -14,7 +14,8 @@ object CurryingTest {
       println(add3(1)(2)(3))*/
     //testForLoop
     //testList
-    testTuple
+    //testTuple
+    testListfoldLeft
   }
 
   def add1(x: Int, y: Int, z: Int): Int = x + y + z
@@ -92,16 +93,27 @@ object CurryingTest {
     println(newStrList2)
 
     println(newStrList.flatMap(_.toList))
-    def convertToOptionType(str: String): Option[String] = if (str.contains("E")) Some(str)  else None
+    def convertToOptionType(str: String): Option[String] = if (str.contains("E")) Some(str) else None
     val convertStr = newStrList.map(s => convertToOptionType(s))
     println(convertStr.flatMap(o => o.getOrElse("EMPTY")))
 
-    val multiList = List[List[String]](List[String]("@@","@@","@@"),List[String]("##","##","##"),List[String]("&&","&&","&&"))
+    val multiList = List[List[String]](List[String]("@@", "@@", "@@"), List[String]("##", "##", "##"), List[String]("&&", "&&", "&&"))
     println(multiList.flatMap(l => l.map(_.contains("@@"))))
 
-    val mutilTypeList = List(List("QQ","",""),List("QQ","",""),List("QQ","",""))
+    val mutilTypeList = List(List("QQ", "", ""), List("QQ", "", ""), List("QQ", "", ""))
     println(List.flatten(mutilTypeList))
+    ("Thank you!" * 3).foreach(print)
 
+  }
+
+  def testListfoldLeft() {
+    val feeds = List[String]("blog.toolshed.com", "pragdave.pragdave.com", "dimsumthinking.com/blog")
+
+    val total = feeds.foldLeft(0) {
+      (total, feed) => total + feed.length
+    }
+
+    println("total length of feed urls:" + total)
   }
 
 }
