@@ -45,7 +45,7 @@ object TestOption {
   def useMatchingPattern() {
     val myTuple = (123, "abc")
     val (number, string) = myTuple
-    println("number=" + number + "|" + "string=" + string)
+    println("numberRange=" + number + "|" + "string=" + string)
   }
 
   def testOptionUsage() {

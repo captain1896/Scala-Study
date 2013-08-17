@@ -10,7 +10,7 @@ package com.lucas.study.scala.ClassAndObject.JavaEyes
 class Person(val firstName: String, val lastName: String) {
   private var position: String = _
 
-  println("creating " + toString)
+  println("Creating " + toString)
 
   def this(firstName: String, lastName: String, positionHeld: String) {
     this(firstName, lastName)
