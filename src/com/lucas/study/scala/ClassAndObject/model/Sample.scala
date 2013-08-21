@@ -9,7 +9,7 @@ package com.lucas.study.scala.ClassAndObject.model
  */
 class Sample {
   println("You are constructing an instance of Sample!")
-
+  println("Happy Creating!")
 }
 
 object Sample extends App {
