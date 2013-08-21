@@ -21,3 +21,10 @@ class DateHelper(number: Int) {
     date.getTime
   }
 }
+
+object DateHelper {
+  val ago = "ago"
+  val from_now = "from_now"
+
+  implicit def convertInt2DateHelper(number: Int) = new DateHelper(number)
+}
