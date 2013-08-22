@@ -38,9 +38,9 @@ object MapTest {
       case ex: java.util.NoSuchElementException => println("Not Found!")
     }
 
-    val newFeeds1 = feeds.updated("Venkat Subramaniam", "agiledeveloper.com.blog")
-    println("Venkt's blog in original feeds :" + feeds.get("Venkat Subramaniam"))
-    println("Venkt's blog in original feeds :" + newFeeds1.get("Venkat Subramaniam"))
+    val newFeeds1 = feeds.updated("Venkat Subramaniam", "agiledeveloper.com/blog")
+    println("Venkat's blog in original feeds :" + feeds.get("Venkat Subramaniam"))
+    println("Venkat's blog in original feeds :" + newFeeds1.get("Venkat Subramaniam"))
 
     val mutableFeeds = scala.collection.mutable.Map("Scala Book Forums" -> "forums.pragprog.com/forums/87")
     mutableFeeds("Groovy Book Forums:") = " mutableFeeds.size"
