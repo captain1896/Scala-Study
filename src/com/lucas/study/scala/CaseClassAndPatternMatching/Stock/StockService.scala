@@ -13,7 +13,6 @@ object StockService {
       case Symbol() => println("Look Up price for valid symbol " + input)
       case ReceiveStockPrice(symbol@Symbol(), price) => println("Received price %f for symbol %s \n", price, symbol)
       case ReceiveStockPrice(symbol, price) => println("Received price %f for symbol %s \n", price, symbol)
-
       case _ => println("Invalid input " + input)
     }
   }
