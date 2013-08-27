@@ -14,6 +14,7 @@ object ListTest {
     testInsertSort2
     testListMatchingPattern
     testIsortWithMatchingPattern
+    testListBuffer
   }
 
 
@@ -122,38 +123,45 @@ object ListTest {
     else xs.head :: insert2(x, xs.tail)
 
   def testInsertSort2() {
-    val numbers = List[Int](55,33,11,22,663)
+    val numbers = List[Int](55, 33, 11, 22, 663)
     println(numbers)
     println(isort2(numbers))
-    println(insert2(990,isort2(numbers)))
-    println(insert2(9,isort2(numbers)))
+    println(insert2(990, isort2(numbers)))
+    println(insert2(9, isort2(numbers)))
   }
 
   def testListMatchingPattern() {
     val fruit = "apples" :: ("orange" :: ("pears" :: Nil))
-    val List(a,b,c) = fruit
-    val x::y::rest = fruit
-    println(a + "|" + b +"|" + c)
-    println(x + "|" + y +"|" + rest)
+    val List(a, b, c) = fruit
+    val x :: y :: rest = fruit
+    println(a + "|" + b + "|" + c)
+    println(x + "|" + y + "|" + rest)
   }
 
-  def isortWithMatchingPattern(xs:List[Int]):List[Int]= xs match {
+  def isortWithMatchingPattern(xs: List[Int]): List[Int] = xs match {
     case List() => List()
-    case x :: xs1 => insertWithMatchingPattern(x,isortWithMatchingPattern(xs1))
+    case x :: xs1 => insertWithMatchingPattern(x, isortWithMatchingPattern(xs1))
   }
 
-  def insertWithMatchingPattern(x:Int ,xs :List[Int]):List[Int] = xs match {
+  def insertWithMatchingPattern(x: Int, xs: List[Int]): List[Int] = xs match {
     case List() => List(x)
-    case y :: ys => if (x <= y) x::xs
-      else y::insertWithMatchingPattern(x,ys)
+    case y :: ys => if (x <= y) x :: xs
+    else y :: insertWithMatchingPattern(x, ys)
   }
 
 
   def testIsortWithMatchingPattern() {
-    val numbers = List[Int](55,33,11,22,663)
+    val numbers = List[Int](55, 33, 11, 22, 663)
     println(isortWithMatchingPattern(numbers))
-    println(insertWithMatchingPattern(100000,isortWithMatchingPattern(numbers)))
+    println(insertWithMatchingPattern(100000, isortWithMatchingPattern(numbers)))
   }
 
+  def testListBuffer() {
+    import scala.collection.mutable.ListBuffer
+    val listBuffer = new ListBuffer[(Int, Int)]()
+    listBuffer += ((1, 1))
+    println(listBuffer)
+
+  }
 
 }
