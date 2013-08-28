@@ -158,9 +158,22 @@ object ListTest {
 
   def testListBuffer() {
     import scala.collection.mutable.ListBuffer
-    val listBuffer = new ListBuffer[(Int, Int)]()
-    listBuffer += ((1, 1))
+    val listBuffer = new ListBuffer[(Int, Int)]
+    listBuffer.+=((1, 1))
+    listBuffer.+=((1, 1))
+    listBuffer.+=((1, 1))
+    listBuffer.+=((1, 2))
+    listBuffer.+=((1, 3))
+    listBuffer.+=((1, 4))
+    listBuffer.+=((1, 5))
     println(listBuffer)
+    val toList = listBuffer.toList
+    println(toList.distinct)
+    val toArray = listBuffer.toArray
+    toArray.foreach(println _)
+    val toSeq = listBuffer.toSeq
+    println(toSeq)
+
 
   }
 
