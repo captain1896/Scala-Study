@@ -1,5 +1,7 @@
 package com.lucas.study.scala.ClassAndObject
+
 import CheckSumAccumulator.calculate
+
 /**
  * Created with IntelliJ IDEA.
  * User: Lucas
@@ -7,7 +9,7 @@ import CheckSumAccumulator.calculate
  * Time: 下午4:19
  * To change this template use File | Settings | File Templates.
  */
-object FallWinterSpringSummer extends Application{
-  for (season <- List("fall","winter","spring"))
-    println(season + ":" + calculate(season))
+object FallWinterSpringSummer extends Application {
+    for (season <- List("fall", "winter", "spring"))
+        println(season + ":" + calculate(season))
 }

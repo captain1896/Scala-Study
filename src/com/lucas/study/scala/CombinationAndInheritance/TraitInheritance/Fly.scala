@@ -8,9 +8,9 @@ package com.lucas.study.scala.CombinationAndInheritance.TraitInheritance
  * To change this template use File | Settings | File Templates.
  */
 trait Fly {
-  def fly() {
-    println("Flying...")
-  }
+    def fly() {
+        println("Flying...")
+    }
 
-  def flyWithNothing()
+    def flyWithNothing()
 }

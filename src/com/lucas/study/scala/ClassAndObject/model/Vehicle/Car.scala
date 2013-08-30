@@ -8,7 +8,7 @@ package com.lucas.study.scala.ClassAndObject.model.Vehicle
  * To change this template use File | Settings | File Templates.
  */
 class Car(override val id: Int, override val year: Int, var fuelLevel: Int) extends Vehicle(id, year) {
-  override def toString(): String = {
-    super.toString() + " Fuel Level: " + fuelLevel
-  }
+    override def toString(): String = {
+        super.toString() + " Fuel Level: " + fuelLevel
+    }
 }

@@ -8,7 +8,7 @@ package com.lucas.study.scala.CombinationAndInheritance.Superman
  * To change this template use File | Settings | File Templates.
  */
 trait Fly {
-  def fly(){
-    println("Flying In the Sky!")
-  }
+    def fly() {
+        println("Flying In the Sky!")
+    }
 }

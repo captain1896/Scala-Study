@@ -8,8 +8,8 @@ package com.lucas.study.scala.CombinationAndInheritance.DynamicallyBound
  * To change this template use File | Settings | File Templates.
  */
 abstract class Element {
-  def demo() {
-    println("Element's implementation invoked!")
-  }
+    def demo() {
+        println("Element's implementation invoked!")
+    }
 
 }

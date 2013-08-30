@@ -8,7 +8,7 @@ package com.lucas.study.scala.Trait.MethodBounding
  * To change this template use File | Settings | File Templates.
  */
 trait UpperCaseWriter extends Writer {
-  abstract override def writeMessage(message: String) = {
-    super.writeMessage(message.toUpperCase())
-  }
+    abstract override def writeMessage(message: String) = {
+        super.writeMessage(message.toUpperCase())
+    }
 }

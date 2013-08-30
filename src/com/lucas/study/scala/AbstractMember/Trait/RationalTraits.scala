@@ -8,16 +8,16 @@ package com.lucas.study.scala.AbstractMember.Trait
  * To change this template use File | Settings | File Templates.
  */
 trait RationalTraits {
-  val numerArg: Int
-  val denomArg: Int
-  require(denomArg != 0)
-  private val g = gcd(numerArg, denomArg)
-  val numer = numerArg / g
-  val denom = denomArg / g
+    val numerArg: Int
+    val denomArg: Int
+    require(denomArg != 0)
+    private val g = gcd(numerArg, denomArg)
+    val numer = numerArg / g
+    val denom = denomArg / g
 
-  private def gcd(a: Int, b: Int): Int = {
-    if (b == 0) a else gcd(b, a % b)
-  }
+    private def gcd(a: Int, b: Int): Int = {
+        if (b == 0) a else gcd(b, a % b)
+    }
 
-  override def toString = numer + "/" + denom
+    override def toString = numer + "/" + denom
 }

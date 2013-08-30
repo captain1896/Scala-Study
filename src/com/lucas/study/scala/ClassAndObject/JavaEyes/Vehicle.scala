@@ -8,5 +8,5 @@ package com.lucas.study.scala.ClassAndObject.JavaEyes
  * To change this template use File | Settings | File Templates.
  */
 class Vehicle(val id: Int, val year: Int) {
-  override def toString(): String = "ID:" + id + ",Year:" + year
+    override def toString(): String = "ID:" + id + ",Year:" + year
 }

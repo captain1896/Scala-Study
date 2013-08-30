@@ -8,20 +8,20 @@ package com.lucas.study.scala.Trait.MethodBounding
  * To change this template use File | Settings | File Templates.
  */
 object MethodBoundingTest {
-  def main(args: Array[String]) {
-    test
-  }
+    def main(args: Array[String]) {
+        test
+    }
 
-  def test() {
-    val myWriterProfanityFirst = new StringWriterDelegate with UpperCaseWriter with ProfanityFilterWriter
+    def test() {
+        val myWriterProfanityFirst = new StringWriterDelegate with UpperCaseWriter with ProfanityFilterWriter
 
-    val myWriterProfanityLast = new StringWriterDelegate with ProfanityFilterWriter with UpperCaseWriter
+        val myWriterProfanityLast = new StringWriterDelegate with ProfanityFilterWriter with UpperCaseWriter
 
-    myWriterProfanityFirst writeMessage "There is no sin except stupidity!"
-    println(myWriterProfanityFirst)
+        myWriterProfanityFirst writeMessage "There is no sin except stupidity!"
+        println(myWriterProfanityFirst)
 
-    myWriterProfanityLast.writeMessage("There is no sin except stupidity!")
-    println(myWriterProfanityLast)
-  }
+        myWriterProfanityLast.writeMessage("There is no sin except stupidity!")
+        println(myWriterProfanityLast)
+    }
 }
 

@@ -7,6 +7,6 @@ package com.lucas.study.scala.CombinationAndInheritance.Superman
  * Time: 上午11:40
  * To change this template use File | Settings | File Templates.
  */
-class Man(nameS:String) extends Eat with Sleep{
-  val name = nameS
+class Man(nameS: String) extends Eat with Sleep {
+    val name = nameS
 }

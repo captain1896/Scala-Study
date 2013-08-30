@@ -8,11 +8,11 @@ package com.lucas.study.scala.ClassAndObject.model
  * To change this template use File | Settings | File Templates.
  */
 class Sample {
-  println("You are constructing an instance of Sample!")
-  println("Happy Creating!")
+    println("You are constructing an instance of Sample!")
+    println("Happy Creating!")
 }
 
 object Sample extends App {
-  new Sample
-  new Sample
+    new Sample
+    new Sample
 }

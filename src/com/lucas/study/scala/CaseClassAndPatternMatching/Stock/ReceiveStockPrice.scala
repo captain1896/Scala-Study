@@ -8,16 +8,16 @@ package com.lucas.study.scala.CaseClassAndPatternMatching.Stock
  * To change this template use File | Settings | File Templates.
  */
 object ReceiveStockPrice {
-  def unapply(input: String): Option[(String, Double)] = {
-    try {
-      if (input contains ":") {
-        val splitQuote = input split ":"
-        Some(splitQuote(0), splitQuote(1).toDouble)
-      } else {
-        None
-      }
-    } catch {
-      case _: NumberFormatException => None
+    def unapply(input: String): Option[(String, Double)] = {
+        try {
+            if (input contains ":") {
+                val splitQuote = input split ":"
+                Some(splitQuote(0), splitQuote(1).toDouble)
+            } else {
+                None
+            }
+        } catch {
+            case _: NumberFormatException => None
+        }
     }
-  }
 }

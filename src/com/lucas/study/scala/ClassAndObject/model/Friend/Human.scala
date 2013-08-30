@@ -7,6 +7,6 @@ package com.lucas.study.scala.ClassAndObject.model.Friend
  * Time: 下午6:43
  * To change this template use File | Settings | File Templates.
  */
-class Human(override val name:String) extends Friend {
+class Human(override val name: String) extends Friend {
 
 }

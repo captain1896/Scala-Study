@@ -8,10 +8,10 @@ package com.lucas.study.scala.CombinationAndInheritance.TraitInheritance
  * To change this template use File | Settings | File Templates.
  */
 object Test extends App {
-  val bird = new BlueBird
-  println(bird.name)
-  bird.fly()
-  bird.walk()
-  bird.flyWithNothing()
-  bird.eat()
+    val bird = new BlueBird
+    println(bird.name)
+    bird.fly()
+    bird.walk()
+    bird.flyWithNothing()
+    bird.eat()
 }

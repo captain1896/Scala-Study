@@ -8,22 +8,22 @@ package com.lucas.study.scala.ClassAndObject.model
  * To change this template use File | Settings | File Templates.
  */
 class Car(val year: Int) {
-  private var milesDriven: Int = 0
+    private var milesDriven: Int = 0
 
-  def miles() = milesDriven
+    def miles() = milesDriven
 
-  def drive(distance: Int) {
-    milesDriven += Math.abs(distance)
-  }
+    def drive(distance: Int) {
+        milesDriven += Math.abs(distance)
+    }
 }
 
 object Car {
-  def main(args: Array[String]) = {
-    val car = new Car(2009)
-    println("Car Made In Year " + car.year)
-    println("Miles driven " + car.miles())
-    println("Driven for 10 miles")
-    car.drive(10)
-    println("Miles driven " + car.miles())
-  }
+    def main(args: Array[String]) = {
+        val car = new Car(2009)
+        println("Car Made In Year " + car.year)
+        println("Miles driven " + car.miles())
+        println("Driven for 10 miles")
+        car.drive(10)
+        println("Miles driven " + car.miles())
+    }
 }

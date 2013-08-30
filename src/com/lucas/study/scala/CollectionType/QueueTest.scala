@@ -11,14 +11,14 @@ import scala.collection.immutable.Queue
  * To change this template use File | Settings | File Templates.
  */
 object QueueTest {
-  def main(arg: Array[String]) {
-    //
-  }
+    def main(arg: Array[String]) {
+        //
+    }
 
-  /*def test() {
-    val empty = new Queue[Int]
-    println(empty)
-    val has1 = empty.enqueue(1)
-    println(has1)
-  }*/
+    /*def test() {
+      val empty = new Queue[Int]
+      println(empty)
+      val has1 = empty.enqueue(1)
+      println(has1)
+    }*/
 }

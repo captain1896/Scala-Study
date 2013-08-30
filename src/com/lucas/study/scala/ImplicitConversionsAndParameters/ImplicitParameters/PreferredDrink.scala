@@ -7,6 +7,6 @@ package com.lucas.study.scala.ImplicitConversionsAndParameters.ImplicitParameter
  * Time: 下午3:30
  * To change this template use File | Settings | File Templates.
  */
-class PreferredDrink(val preference:String) {
+class PreferredDrink(val preference: String) {
 
 }

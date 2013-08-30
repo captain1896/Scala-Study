@@ -16,17 +16,17 @@ package com.lucas.study.scala.ImplicitConversionsAndParameters.ImplicitParameter
  */
 object Mocha extends App {
 
-  class PreferredDrink(val preference: String)
+    class PreferredDrink(val preference: String)
 
-  implicit val pref = new PreferredDrink("mocha")
+    implicit val pref = new PreferredDrink("mocha")
 
-  def enjoy(name: String)(implicit drink: PreferredDrink) {
-    print("welcome," + name)
-    print(".Enjoy a ")
-    print(drink.preference)
-    println("!")
-  }
+    def enjoy(name: String)(implicit drink: PreferredDrink) {
+        print("welcome," + name)
+        print(".Enjoy a ")
+        print(drink.preference)
+        println("!")
+    }
 
-  enjoy("reader")
+    enjoy("reader")
 
 }

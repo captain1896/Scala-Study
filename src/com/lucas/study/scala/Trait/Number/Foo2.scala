@@ -8,9 +8,9 @@ package com.lucas.study.scala.Trait.Number
  * To change this template use File | Settings | File Templates.
  */
 trait Foo2 extends Foo {
-  abstract override def bar(x:Int) = {
-    val a = x * super.bar(x)
-    println("Foo2=" + a)
-    a
-  }
+    abstract override def bar(x: Int) = {
+        val a = x * super.bar(x)
+        println("Foo2=" + a)
+        a
+    }
 }

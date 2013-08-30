@@ -8,6 +8,6 @@ package com.lucas.study.scala.ClassAndObject.model.Vehicle
  * To change this template use File | Settings | File Templates.
  */
 object VehicleTest extends App {
-  val car = new Car(1, 2009, 100)
-  println(car)
+    val car = new Car(1, 2009, 100)
+    println(car)
 }

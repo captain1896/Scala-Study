@@ -7,6 +7,6 @@ package com.lucas.study.scala.Trait.Check
  * Time: 下午12:23
  * To change this template use File | Settings | File Templates.
  */
-trait CreditCheck extends Check{
-  override def check():String = "Checked Credit ..."  + super.check()
+trait CreditCheck extends Check {
+    override def check(): String = "Checked Credit ..." + super.check()
 }

@@ -8,9 +8,9 @@ package com.lucas.study.scala.Trait.MethodBounding
  * To change this template use File | Settings | File Templates.
  */
 class StringWriterDelegate extends Writer {
-  val writer = new java.io.StringWriter
+    val writer = new java.io.StringWriter
 
-  def writeMessage(message: String) = writer.write(message)
+    def writeMessage(message: String) = writer.write(message)
 
-  override def toString(): String = writer.toString
+    override def toString(): String = writer.toString
 }

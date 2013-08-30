@@ -8,6 +8,8 @@ package com.lucas.study.scala.AbstractMember.Abstracts
  * To change this template use File | Settings | File Templates.
  */
 abstract class Fruit {
-  val v:String //'v'代表value(值)
-  def m:String //'m'代表method(方法)
+    val v: String
+
+    //'v'代表value(值)
+    def m: String //'m'代表method(方法)
 }

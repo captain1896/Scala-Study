@@ -8,5 +8,5 @@ package com.lucas.study.scala.Trait.Animals
  * To change this template use File | Settings | File Templates.
  */
 class Dog(val name: String) extends Animal with Friend {
-  override def listen() = println(name + "'s listening quietly!")
+    override def listen() = println(name + "'s listening quietly!")
 }

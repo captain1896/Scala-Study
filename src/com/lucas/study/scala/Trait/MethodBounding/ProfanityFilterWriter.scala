@@ -8,5 +8,5 @@ package com.lucas.study.scala.Trait.MethodBounding
  * To change this template use File | Settings | File Templates.
  */
 trait ProfanityFilterWriter extends Writer {
-  abstract override def writeMessage(message: String) = super.writeMessage(message.replace("stupid", "s-----"))
+    abstract override def writeMessage(message: String) = super.writeMessage(message.replace("stupid", "s-----"))
 }

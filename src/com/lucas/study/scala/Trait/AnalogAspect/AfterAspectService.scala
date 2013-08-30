@@ -8,8 +8,8 @@ package com.lucas.study.scala.Trait.AnalogAspect
  * To change this template use File | Settings | File Templates.
  */
 trait AfterAspectService extends Service {
-  abstract override def doAction() {
-    super.doAction()
-    println("After Aspect ends!")
-  }
+    abstract override def doAction() {
+        super.doAction()
+        println("After Aspect ends!")
+    }
 }

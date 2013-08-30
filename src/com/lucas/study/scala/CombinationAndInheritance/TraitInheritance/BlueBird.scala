@@ -7,13 +7,13 @@ package com.lucas.study.scala.CombinationAndInheritance.TraitInheritance
  * Time: 上午11:12
  * To change this template use File | Settings | File Templates.
  */
-class BlueBird extends Bird with Fly with Walk with Eat{
+class BlueBird extends Bird with Fly with Walk with Eat {
 
-  def flyWithNothing() {
-    println("Blue Bird Fly With Nothing!")
-  }
+    def flyWithNothing() {
+        println("Blue Bird Fly With Nothing!")
+    }
 
-  override def eat() {
-    println("Blue Bird Is Eating Something!")
-  }
+    override def eat() {
+        println("Blue Bird Is Eating Something!")
+    }
 }

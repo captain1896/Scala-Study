@@ -8,8 +8,8 @@ package com.lucas.study.scala.Trait.AnalogAspect
  * To change this template use File | Settings | File Templates.
  */
 trait BeforeAspectService extends Service {
-  abstract override def doAction() {
-    println("Before service starts !")
-    super.doAction()
-  }
+    abstract override def doAction() {
+        println("Before service starts !")
+        super.doAction()
+    }
 }

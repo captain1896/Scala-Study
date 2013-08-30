@@ -8,7 +8,7 @@ package com.lucas.study.scala.CombinationAndInheritance.Superman
  * To change this template use File | Settings | File Templates.
  */
 trait Eat {
-  def eat() {
-    println("can Eat!")
-  }
+    def eat() {
+        println("can Eat!")
+    }
 }

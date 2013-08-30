@@ -8,8 +8,8 @@ package com.lucas.study.scala.CaseClassAndPatternMatching.Stock
  * To change this template use File | Settings | File Templates.
  */
 object Symbol {
-  def unapply(symbol: String): Boolean = symbol == "GOOD" || symbol == "IBM"
+    def unapply(symbol: String): Boolean = symbol == "GOOD" || symbol == "IBM"
 
-  // do something
+    // do something
 
 }

@@ -9,7 +9,7 @@ package com.lucas.study.scala.ClassAndObject.Machine.Vehicle
  */
 class GasStation {
 
-  def fillGas(vehicle: Vehicle) {
-    //vehicle.checkEngine() //ERROR
-  }
+    def fillGas(vehicle: Vehicle) {
+        //vehicle.checkEngine() //ERROR
+    }
 }

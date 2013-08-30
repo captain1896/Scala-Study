@@ -16,18 +16,18 @@ package com.lucas.study.scala.CombinationAndInheritance
  * ...extends ArrayElement(Array(s) ...
  *
  * 新的繼承層級是：
- *    Element
- *      |
+ * Element
+ * |
  * ArrayElement <--Array[String]
- *      |
+ * |
  * LineElement
  *
  * @param s
  */
 class LineElement(s: String) extends ArrayElement(Array(s)) {
-  override def width = s.length
+    override def width = s.length
 
-  override def height = 1
+    override def height = 1
 }
 
 //scala要求，若子類成員所有重寫了父類的具體成員則必須帶有這個修飾符；

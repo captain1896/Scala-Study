@@ -8,6 +8,6 @@ package com.lucas.study.scala.AbstractMember.Abstracts
  * To change this template use File | Settings | File Templates.
  */
 trait AbstractTime {
-  var hour:Int
-  var minute:Int
+    var hour: Int
+    var minute: Int
 }

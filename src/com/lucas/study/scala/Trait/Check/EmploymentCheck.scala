@@ -8,5 +8,5 @@ package com.lucas.study.scala.Trait.Check
  * To change this template use File | Settings | File Templates.
  */
 trait EmploymentCheck extends Check {
-  override def check():String = "Check Employment..." + super.check()
+    override def check(): String = "Check Employment..." + super.check()
 }

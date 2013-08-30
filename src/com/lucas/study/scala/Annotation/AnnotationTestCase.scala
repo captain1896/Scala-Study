@@ -10,10 +10,10 @@ package com.lucas.study.scala.Annotation
 //可以序列化@serializable
 @serializable
 @deprecated class AnnotationTestCase {
-  // many things ...
+    // many things ...
 
-  //添加了@transient注解之後，這個字段就不會被序列化
-  @transient
-  private val name = "Jayden"
+    //添加了@transient注解之後，這個字段就不會被序列化
+    @transient
+    private val name = "Jayden"
 
 }

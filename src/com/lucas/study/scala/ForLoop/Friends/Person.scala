@@ -11,13 +11,13 @@ class Person(val firstName: String, val lastName: String) {
 }
 
 object Person {
-  def apply(firstName: String, lastName: String): Person = new Person(firstName, lastName)
+    def apply(firstName: String, lastName: String): Person = new Person(firstName, lastName)
 
-  def main(args: Array[String]) {
-    val firends = List(Person("Brian", "Sletten"), Person("Neal", "Ford"), Person("Scott", "Davis"), Person("Struart", "Halloway"))
-    val lastNames = for (f <- firends; lastName = f.lastName) yield lastName
-    println(lastNames.mkString(","))
-  }
+    def main(args: Array[String]) {
+        val firends = List(Person("Brian", "Sletten"), Person("Neal", "Ford"), Person("Scott", "Davis"), Person("Struart", "Halloway"))
+        val lastNames = for (f <- firends; lastName = f.lastName) yield lastName
+        println(lastNames.mkString(","))
+    }
 }
 
 

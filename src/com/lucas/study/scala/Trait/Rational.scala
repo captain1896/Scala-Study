@@ -8,31 +8,31 @@ package com.lucas.study.scala.Trait
  * To change this template use File | Settings | File Templates.
  */
 class Rational(n: Int, d: Int) extends Ordered[Rational] {
-  //...
-  //def < (that:Rational) =
-  require(d != 0)
-  private val g = gcd(n.abs, d.abs)
-  val numer = n / g
-  val denom = d / g
+    //...
+    //def < (that:Rational) =
+    require(d != 0)
+    private val g = gcd(n.abs, d.abs)
+    val numer = n / g
+    val denom = d / g
 
-  def this(n: Int) = this(n, 1)
+    def this(n: Int) = this(n, 1)
 
-  //辅助构造器
-  override def toString = numer + "/" + denom
+    //辅助构造器
+    override def toString = numer + "/" + denom
 
-  private def gcd(a: Int, b: Int): Int =
-    if (b == 0) a else gcd(b, a % b)
+    private def gcd(a: Int, b: Int): Int =
+        if (b == 0) a else gcd(b, a % b)
 
-  def compare(that: Rational) =
-    (this.numer * that.denom) - (that.numer * this.denom)
+    def compare(that: Rational) =
+        (this.numer * that.denom) - (that.numer * this.denom)
 
-  /*def <(that: Rational) =
-    this.numer * that.denom < that.numer * this.denom
+    /*def <(that: Rational) =
+      this.numer * that.denom < that.numer * this.denom
 
-  def >(that: Rational) = that < this
+    def >(that: Rational) = that < this
 
-  def <=(that: Rational) = (this < that) || (this == that)
+    def <=(that: Rational) = (this < that) || (this == that)
 
-  def >=(that: Rational) = (this > that) || (this == that)*/
+    def >=(that: Rational) = (this > that) || (this == that)*/
 
 }

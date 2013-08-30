@@ -8,5 +8,5 @@ package com.lucas.study.scala.Trait.Number
  * To change this template use File | Settings | File Templates.
  */
 abstract class Bar {
-  def bar(x:Int):Int
+    def bar(x: Int): Int
 }

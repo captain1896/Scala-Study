@@ -8,6 +8,6 @@ package com.lucas.study.scala.StateObject.Time
  * To change this template use File | Settings | File Templates.
  */
 class Time {
-  var hour = 12
-  var minute = 0
+    var hour = 12
+    var minute = 0
 }

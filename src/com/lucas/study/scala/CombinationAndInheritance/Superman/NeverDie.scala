@@ -8,7 +8,7 @@ package com.lucas.study.scala.CombinationAndInheritance.Superman
  * To change this template use File | Settings | File Templates.
  */
 trait NeverDie {
-   def neverDie() {
-     println("Never Die And Live Forever!")
-   }
+    def neverDie() {
+        println("Never Die And Live Forever!")
+    }
 }

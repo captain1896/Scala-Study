@@ -8,10 +8,10 @@ package com.lucas.study.scala.ClassAndObject.Machine
  * To change this template use File | Settings | File Templates.
  */
 object Test {
-  def main(args: Array[String]) = {
-    val microwave = new Microwave
-    microwave.start()
-    microwave.stop()
-    //microwave.turnTable()  //ERROR
-  }
+    def main(args: Array[String]) = {
+        val microwave = new Microwave
+        microwave.start()
+        microwave.stop()
+        //microwave.turnTable()  //ERROR
+    }
 }

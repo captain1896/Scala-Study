@@ -10,21 +10,21 @@ import scala.util.matching.Regex
  * To change this template use File | Settings | File Templates.
  */
 object RegexTest {
-  def main(args: Array[String]) {
-    test
-  }
-
-  def test() {
-    val Decimal = new Regex("(-)?(\\d+)(\\.\\d*)?")
-    val decimal2 = """(-)?(\d+)(\.\d*)?""".r
-    val input = "for -1.0 to 99 by 3"
-    for (s <- decimal2.findAllIn(input))
-      println(s)
-
-    val Decimal(sign, integerpart, decimalpart) = "-1.23"
-    for (Decimal(s, i, d) <- Decimal findAllIn (input)) {
-      println("sign:" + s + ",integer:" + i + ",decimal:" + d)
+    def main(args: Array[String]) {
+        test
     }
 
-  }
+    def test() {
+        val Decimal = new Regex("(-)?(\\d+)(\\.\\d*)?")
+        val decimal2 = """(-)?(\d+)(\.\d*)?""".r
+        val input = "for -1.0 to 99 by 3"
+        for (s <- decimal2.findAllIn(input))
+            println(s)
+
+        val Decimal(sign, integerpart, decimalpart) = "-1.23"
+        for (Decimal(s, i, d) <- Decimal findAllIn (input)) {
+            println("sign:" + s + ",integer:" + i + ",decimal:" + d)
+        }
+
+    }
 }

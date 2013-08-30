@@ -7,6 +7,6 @@ package com.lucas.study.scala.Trait.Animals
  * Time: 下午12:06
  * To change this template use File | Settings | File Templates.
  */
-class Cat(val name:String) extends Animal {
+class Cat(val name: String) extends Animal {
 
 }

@@ -9,6 +9,6 @@ package com.lucas.study.scala.CombinationAndInheritance.Superman
  */
 trait Sleep {
     def sleep() {
-      println("Can Sleep!")
+        println("Can Sleep!")
     }
 }

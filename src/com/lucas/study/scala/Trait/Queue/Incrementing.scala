@@ -7,8 +7,8 @@ package com.lucas.study.scala.Trait.Queue
  * Time: 下午1:55
  * To change this template use File | Settings | File Templates.
  */
-trait Incrementing extends IntQueue{
-  abstract override def put(x:Int) {
-    super.put(x + 1)
-  }
+trait Incrementing extends IntQueue {
+    abstract override def put(x: Int) {
+        super.put(x + 1)
+    }
 }

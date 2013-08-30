@@ -8,8 +8,11 @@ package com.lucas.study.scala.Trait
  * To change this template use File | Settings | File Templates.
  */
 trait CharSequence {
-  def charAt(index:Int):Char
-  def length:Int
-  def subSequence(start:Int, end :Int):CharSequence
-  def toString():String
+    def charAt(index: Int): Char
+
+    def length: Int
+
+    def subSequence(start: Int, end: Int): CharSequence
+
+    def toString(): String
 }

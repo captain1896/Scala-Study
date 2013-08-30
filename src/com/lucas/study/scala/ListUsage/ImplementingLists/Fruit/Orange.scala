@@ -7,6 +7,6 @@ package com.lucas.study.scala.ListUsage.ImplementingLists.Fruit
  * Time: 下午5:58
  * To change this template use File | Settings | File Templates.
  */
-class Orange extends Fruit{
+class Orange extends Fruit {
 
 }

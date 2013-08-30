@@ -7,7 +7,8 @@ package com.lucas.study.scala.CombinationAndInheritance.TraitInheritance
  * Time: 上午11:10
  * To change this template use File | Settings | File Templates.
  */
-class Bird(nameS:String) {
-  var name: String = nameS
-  def this() = this("Default Bird")
+class Bird(nameS: String) {
+    var name: String = nameS
+
+    def this() = this("Default Bird")
 }

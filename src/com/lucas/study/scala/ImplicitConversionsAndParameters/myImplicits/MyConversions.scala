@@ -8,15 +8,16 @@ package com.lucas.study.scala.ImplicitConversionsAndParameters.myImplicits
  * To change this template use File | Settings | File Templates.
  */
 object MyConversions {
-  implicit def stringWrapper(s: String): RandomAccessSeq[Char] = {
+    implicit def stringWrapper(s: String): RandomAccessSeq[Char] = {
         new RandomAccessSeq[Char] {
-          def length = s.length
-          def apply(i:Int) = s.charAt(i)
-        }
-  }
+            def length = s.length
 
-  implicit def intToString(x: Int): String = {
-    x.toString
-  }
+            def apply(i: Int) = s.charAt(i)
+        }
+    }
+
+    implicit def intToString(x: Int): String = {
+        x.toString
+    }
 
 }

@@ -8,7 +8,7 @@ package com.lucas.study.scala.CombinationAndInheritance.DynamicallyBound
  * To change this template use File | Settings | File Templates.
  */
 class LineElement extends Element {
-  override def demo() {
-    println("LineElement's implementation invoked!")
-  }
+    override def demo() {
+        println("LineElement's implementation invoked!")
+    }
 }

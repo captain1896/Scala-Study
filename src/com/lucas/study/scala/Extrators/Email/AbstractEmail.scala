@@ -8,9 +8,9 @@ package com.lucas.study.scala.Extrators.Email
  * To change this template use File | Settings | File Templates.
  */
 abstract class AbstractEmail {
-  def isEmail(s: String): Boolean
+    def isEmail(s: String): Boolean
 
-  def domain(s: String): String
+    def domain(s: String): String
 
-  def user(s: String): String
+    def user(s: String): String
 }

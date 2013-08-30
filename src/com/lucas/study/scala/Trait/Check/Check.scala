@@ -8,5 +8,5 @@ package com.lucas.study.scala.Trait.Check
  * To change this template use File | Settings | File Templates.
  */
 abstract class Check {
-  def check(): String = "Checkd Application Details..."
+    def check(): String = "Checkd Application Details..."
 }

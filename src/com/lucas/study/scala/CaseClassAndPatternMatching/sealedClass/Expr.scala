@@ -29,21 +29,21 @@ case class BinOp(operator: String, left: Expr, right: Expr) extends Expr {
 
 
 object test {
-  def main(args: Array[String]) {
-    println(describe(Number(9.8)))
-    println(describeUpdateVersion(Number(9.8)))
-  }
+    def main(args: Array[String]) {
+        println(describe(Number(9.8)))
+        println(describeUpdateVersion(Number(9.8)))
+    }
 
-  //爲了關閉編譯器的警報，輕量級的做法是給匹配的表達式添加@unchecked注解
-  def describe(e: Expr): String = (e: @unchecked) match {
-    case Number(_) => "a numberRange"
-    case Var(_) => "a variable"
-  }
+    //爲了關閉編譯器的警報，輕量級的做法是給匹配的表達式添加@unchecked注解
+    def describe(e: Expr): String = (e: @unchecked) match {
+        case Number(_) => "a numberRange"
+        case Var(_) => "a variable"
+    }
 
 
-  def describeUpdateVersion(e: Expr): String = e match {
-    case Number (_) => "a numberRange"
-    case Var (_) => "a variable"
-    case _ => throw new RuntimeException
-  }
+    def describeUpdateVersion(e: Expr): String = e match {
+        case Number(_) => "a numberRange"
+        case Var(_) => "a variable"
+        case _ => throw new RuntimeException
+    }
 }

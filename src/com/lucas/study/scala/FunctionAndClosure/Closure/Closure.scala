@@ -8,43 +8,43 @@ package com.lucas.study.scala.FunctionAndClosure.Closure
  * To change this template use File | Settings | File Templates.
  */
 object Closure {
-  def main(args: Array[String]) {
-    testClosure
-  }
-
-  def loopThrough(number: Int)(closure: Int => Unit) {
-    for (i <- 1 to number) {
-      closure(i)
-    }
-  }
-
-  def testClosure() {
-    var result = 0
-    val addInt = {
-      value: Int => result += value
-    }
-    loopThrough(10) {
-      addInt
-    }
-    println("Total of values for 1-10 is:" + result)
-
-    result = 0
-    loopThrough(5) {
-      addInt
-    }
-    println("Total of values for 1-5 is:" + result)
-
-    val productInt = {
-      value: Int => result *= value
+    def main(args: Array[String]) {
+        testClosure
     }
 
-    //result = 1
-    //loopThrough(5)(productInt)
-    var product = 1
-    loopThrough(5) {
-      product *= _
+    def loopThrough(number: Int)(closure: Int => Unit) {
+        for (i <- 1 to number) {
+            closure(i)
+        }
     }
-    println("Product of values for 1-5 is:" + product)
 
-  }
+    def testClosure() {
+        var result = 0
+        val addInt = {
+            value: Int => result += value
+        }
+        loopThrough(10) {
+            addInt
+        }
+        println("Total of values for 1-10 is:" + result)
+
+        result = 0
+        loopThrough(5) {
+            addInt
+        }
+        println("Total of values for 1-5 is:" + result)
+
+        val productInt = {
+            value: Int => result *= value
+        }
+
+        //result = 1
+        //loopThrough(5)(productInt)
+        var product = 1
+        loopThrough(5) {
+            product *= _
+        }
+        println("Product of values for 1-5 is:" + product)
+
+    }
 }

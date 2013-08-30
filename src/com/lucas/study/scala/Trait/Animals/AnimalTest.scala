@@ -8,17 +8,17 @@ package com.lucas.study.scala.Trait.Animals
  * To change this template use File | Settings | File Templates.
  */
 object AnimalTest {
-  def userFriend(friend: Friend) = friend.listen()
+    def userFriend(friend: Friend) = friend.listen()
 
-  def main(args: Array[String]) {
-    val alf = new Cat("ALF")
-    //val friends: Friend = alf
-    //userFriend(alf)         //ERROR
-    val snowy = new Cat("Snowy") with Friend
-    println(snowy.name)
-    val friendF: Friend = snowy
-    userFriend(friendF)
-  }
+    def main(args: Array[String]) {
+        val alf = new Cat("ALF")
+        //val friends: Friend = alf
+        //userFriend(alf)         //ERROR
+        val snowy = new Cat("Snowy") with Friend
+        println(snowy.name)
+        val friendF: Friend = snowy
+        userFriend(friendF)
+    }
 
 
 }

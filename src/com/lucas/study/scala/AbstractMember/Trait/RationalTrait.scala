@@ -1,7 +1,6 @@
 package com.lucas.study.scala.AbstractMember.Trait
 
 
-
 /**
  * Created with IntelliJ IDEA.
  * User: Lucas
@@ -10,6 +9,6 @@ package com.lucas.study.scala.AbstractMember.Trait
  * To change this template use File | Settings | File Templates.
  */
 trait RationalTrait {
-  val numerArg:Int
-  val denomArg:Int
+    val numerArg: Int
+    val denomArg: Int
 }

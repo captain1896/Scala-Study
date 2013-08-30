@@ -8,5 +8,5 @@ package com.lucas.study.scala.ClassAndObject.Machine.Vehicle
  * To change this template use File | Settings | File Templates.
  */
 class Vehicle {
-  protected def checkingEngine() {}
+    protected def checkingEngine() {}
 }

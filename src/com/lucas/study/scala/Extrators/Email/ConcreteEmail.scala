@@ -8,9 +8,9 @@ package com.lucas.study.scala.Extrators.Email
  * To change this template use File | Settings | File Templates.
  */
 class ConcreteEmail extends AbstractEmail {
-  def isEmail(s: String): Boolean = true
+    def isEmail(s: String): Boolean = true
 
-  def domain(s: String): String = s
+    def domain(s: String): String = s
 
-  def user(s: String): String = s
+    def user(s: String): String = s
 }

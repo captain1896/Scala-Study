@@ -10,10 +10,12 @@ import scala.collection.mutable.ArrayBuffer
  * To change this template use File | Settings | File Templates.
  */
 class BasicIntQueue extends IntQueue {
-  private val buf = new ArrayBuffer[Int]()
-  def get() = buf.remove(0)
-  def put(x:Int) {
-    println("BasicIntQueue.put")
-    buf += x
-  }
+    private val buf = new ArrayBuffer[Int]()
+
+    def get() = buf.remove(0)
+
+    def put(x: Int) {
+        println("BasicIntQueue.put")
+        buf += x
+    }
 }

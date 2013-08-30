@@ -8,14 +8,14 @@ package com.lucas.study.scala.Trait.AnalogAspect
  * To change this template use File | Settings | File Templates.
  */
 class ServiceImpl extends Service {
-  override def doAction() = {
-    println("do Action!")
-  }
+    override def doAction() = {
+        println("do Action!")
+    }
 }
 
 object ServiceImpl {
-  def main(args:Array[String])= {
-    val service = new ServiceImpl with BeforeAspectService with AfterAspectService
-    service.doAction()
-  }
+    def main(args: Array[String]) = {
+        val service = new ServiceImpl with BeforeAspectService with AfterAspectService
+        service.doAction()
+    }
 }

@@ -8,10 +8,10 @@ package com.lucas.study.scala.StateObject.Key
  * To change this template use File | Settings | File Templates.
  */
 class MemoKeyed extends Keyed {
-  private var keyCache: Option[Int] = None
+    private var keyCache: Option[Int] = None
 
-  override def computeKey: Int = {
-    if (!keyCache.isDefined) keyCache = Some(super.computeKey)
-    keyCache.get
-  }
+    override def computeKey: Int = {
+        if (!keyCache.isDefined) keyCache = Some(super.computeKey)
+        keyCache.get
+    }
 }

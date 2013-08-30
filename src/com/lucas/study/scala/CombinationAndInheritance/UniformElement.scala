@@ -12,20 +12,20 @@ package com.lucas.study.scala.CombinationAndInheritance
  * 多態和動態綁定
  *
  * 類層次結構
- *            Element
- *              \
- *        ---------------------------------------
- *       |                  |                    |
- *   UniformElement     ArrayElement       LineElement
- *                          |
- *                     [ LineElement (修改后沒有了) ]
+ * Element
+ * \
+ * ---------------------------------------
+ * |                  |                    |
+ * UniformElement     ArrayElement       LineElement
+ * |
+ * [ LineElement (修改后沒有了) ]
  *
  * @param ch
  * @param width
  * @param height
  */
 class UniformElement(ch: Char, override val width: Int, override val height: Int) extends Element {
-  private val line = ch.toString * width
+    private val line = ch.toString * width
 
-  def contents = Array.make(height, line)
+    def contents = Array.make(height, line)
 }

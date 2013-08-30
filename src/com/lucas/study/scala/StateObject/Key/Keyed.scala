@@ -8,8 +8,8 @@ package com.lucas.study.scala.StateObject.Key
  * To change this template use File | Settings | File Templates.
  */
 class Keyed {
-  def computeKey:Int = {
-    println("計算Key中，這是個耗時操作！！！")
-    9
-  }
+    def computeKey: Int = {
+        println("計算Key中，這是個耗時操作！！！")
+        9
+    }
 }

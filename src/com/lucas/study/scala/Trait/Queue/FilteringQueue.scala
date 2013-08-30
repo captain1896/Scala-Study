@@ -7,6 +7,6 @@ package com.lucas.study.scala.Trait.Queue
  * Time: 下午1:57
  * To change this template use File | Settings | File Templates.
  */
-class FilteringQueue extends BasicIntQueue with Filtering{
+class FilteringQueue extends BasicIntQueue with Filtering {
 
 }

@@ -8,15 +8,15 @@ package com.lucas.study.scala.FunctionAndClosure
  * To change this template use File | Settings | File Templates.
  */
 object FindLongLines {
-  def main(args:Array[String]) {
-    val args = Array[String]("45","H:\\intellij_workspace\\scala-study\\src\\com\\lucas\\study\\scala\\FunctionAndClosure\\LongLines.scala"
-      ,"H:\\intellij_workspace\\scala-study\\src\\com\\lucas\\study\\scala\\FunctionAndClosure\\FindLongLines.scala")
-    val width = args(0).toInt
-    for(arg <- args.drop(1))
-      LongLines.processFileWithLocalFunctionRefactor(arg,width)
-    //Object定义的方法相当于Java中的静态方法一样
-    LongLines.printIncrease()
-    LongLines.sayHelloTo("Mary")
-    LongLines.printLsitNumber
-  }
+    def main(args: Array[String]) {
+        val args = Array[String]("45", "H:\\intellij_workspace\\scala-study\\src\\com\\lucas\\study\\scala\\FunctionAndClosure\\LongLines.scala"
+            , "H:\\intellij_workspace\\scala-study\\src\\com\\lucas\\study\\scala\\FunctionAndClosure\\FindLongLines.scala")
+        val width = args(0).toInt
+        for (arg <- args.drop(1))
+            LongLines.processFileWithLocalFunctionRefactor(arg, width)
+        //Object定义的方法相当于Java中的静态方法一样
+        LongLines.printIncrease()
+        LongLines.sayHelloTo("Mary")
+        LongLines.printLsitNumber
+    }
 }

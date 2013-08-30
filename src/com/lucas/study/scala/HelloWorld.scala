@@ -8,7 +8,7 @@ package com.lucas.study.scala
  * To change this template use File | Settings | File Templates.
  */
 object HelloWorld {
-   def main(args:Array[String]) {
-     println("Hello,Lucas" + "I'm Lucas\"\"")
-   }
+    def main(args: Array[String]) {
+        println("Hello,Lucas" + "I'm Lucas\"\"")
+    }
 }

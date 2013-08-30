@@ -8,5 +8,5 @@ package com.lucas.study.scala.Trait.Check
  * To change this template use File | Settings | File Templates.
  */
 trait CriminalRecordCheck extends Check {
-  override def check(): String = "Check Criminal Records..."  + super.check()
+    override def check(): String = "Check Criminal Records..." + super.check()
 }

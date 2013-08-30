@@ -8,7 +8,7 @@ package com.lucas.study.scala.CombinationAndInheritance.Superman
  * To change this template use File | Settings | File Templates.
  */
 trait BeatMonster {
-   def beatMonster() {
-     println("Beat The Monster!")
-   }
+    def beatMonster() {
+        println("Beat The Monster!")
+    }
 }

@@ -8,5 +8,5 @@ package com.lucas.study.scala.Trait.AnalogAspect
  * To change this template use File | Settings | File Templates.
  */
 trait Service {
-  def doAction():Unit
+    def doAction(): Unit
 }

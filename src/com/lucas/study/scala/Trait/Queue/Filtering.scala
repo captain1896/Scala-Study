@@ -7,8 +7,8 @@ package com.lucas.study.scala.Trait.Queue
  * Time: 下午1:56
  * To change this template use File | Settings | File Templates.
  */
-trait Filtering extends IntQueue{
-  abstract override def put(x:Int) {
-    if(x >= 0) super.put(x)
-  }
+trait Filtering extends IntQueue {
+    abstract override def put(x: Int) {
+        if (x >= 0) super.put(x)
+    }
 }

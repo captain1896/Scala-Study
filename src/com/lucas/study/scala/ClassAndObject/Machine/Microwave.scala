@@ -8,24 +8,24 @@ package com.lucas.study.scala.ClassAndObject.Machine
  * To change this template use File | Settings | File Templates.
  */
 class Microwave {
-  def start() = println("Started")
+    def start() = println("Started")
 
-  def stop() = println("Stopped")
+    def stop() = println("Stopped")
 
-  private def turnTable() = println("turning table")
+    private def turnTable() = println("turning table")
 }
 
 object Microwave {
-  def main(args: Array[String]) {
-    testMicrowave
-  }
+    def main(args: Array[String]) {
+        testMicrowave
+    }
 
-  def testMicrowave() {
-    val microwave = new Microwave
-    microwave.start()
-    microwave.stop()
-    //伴生對象可以訪問類的私有方法以及字段，在別的類裏面就不可以訪問
-    microwave.turnTable()
-  }
+    def testMicrowave() {
+        val microwave = new Microwave
+        microwave.start()
+        microwave.stop()
+        //伴生對象可以訪問類的私有方法以及字段，在別的類裏面就不可以訪問
+        microwave.turnTable()
+    }
 
 }

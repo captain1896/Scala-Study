@@ -8,16 +8,16 @@ package com.lucas.study.scala.ClassAndObject.model.Friend
  * To change this template use File | Settings | File Templates.
  */
 object Test {
-  def main(args: Array[String]) {
-    test
-  }
+    def main(args: Array[String]) {
+        test
+    }
 
-  def test() {
-    val human = new Human("Human")
-    val man = new Man("Man")
-    val woman = new Woman("Woman")
-    human.listen()
-    man.listen()
-    woman.listen()
-  }
+    def test() {
+        val human = new Human("Human")
+        val man = new Man("Man")
+        val woman = new Woman("Woman")
+        human.listen()
+        man.listen()
+        woman.listen()
+    }
 }

@@ -8,7 +8,7 @@ package com.lucas.study.scala.Trait.Number
  * To change this template use File | Settings | File Templates.
  */
 class Foo extends Bar {
-  override def bar(x:Int) = x
+    override def bar(x: Int) = x
 }
 
 /**
@@ -17,14 +17,14 @@ class Foo extends Bar {
  */
 
 object Foo {
-  def main(args:Array[String]) {
-    val foo1 = new Foo with Foo1 with Foo2
-    println(foo1)
-    println("(new Foo with Foo1 with Foo2).bar(5)=")
-    foo1.bar(5)
-    val foo2 = new Foo with Foo2 with Foo1
-    println(foo2)
-    println("(new Foo with Foo2 with Foo1).bar(5)=")
-    foo2.bar(5)
-  }
+    def main(args: Array[String]) {
+        val foo1 = new Foo with Foo1 with Foo2
+        println(foo1)
+        println("(new Foo with Foo1 with Foo2).bar(5)=")
+        foo1.bar(5)
+        val foo2 = new Foo with Foo2 with Foo1
+        println(foo2)
+        println("(new Foo with Foo2 with Foo1).bar(5)=")
+        foo2.bar(5)
+    }
 }

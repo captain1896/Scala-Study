@@ -7,6 +7,6 @@ package com.lucas.study.scala.ClassAndObject.model.Animal
  * Time: 下午6:05
  * To change this template use File | Settings | File Templates.
  */
-class Pet(val name:String) {
-  override def toString() = name
+class Pet(val name: String) {
+    override def toString() = name
 }

@@ -8,10 +8,10 @@ package com.lucas.study.scala.Trait
  * To change this template use File | Settings | File Templates.
  */
 trait Rectangular {
-  /*def topLeft:Point
-  def bottomRight:Point
+    /*def topLeft:Point
+    def bottomRight:Point
 
-  def left = topleft.x
-  def right = bottomRight.x
-  def width = right - left*/
+    def left = topleft.x
+    def right = bottomRight.x
+    def width = right - left*/
 }

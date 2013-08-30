@@ -8,7 +8,7 @@ package com.lucas.study.scala.CombinationAndInheritance.Superman
  * To change this template use File | Settings | File Templates.
  */
 trait RescueHumanBeing {
-   def rescueHumanBeing() {
-     println("Rescue Human Being!")
-   }
+    def rescueHumanBeing() {
+        println("Rescue Human Being!")
+    }
 }

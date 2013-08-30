@@ -8,16 +8,16 @@ package com.lucas.study.scala.ForLoop
  * To change this template use File | Settings | File Templates.
  */
 object ForLoopTest {
-  def main(args: Array[String]) {
-    println(test)
-  }
-
-  def test(): Int = {
-    var sum = 0
-    for (i <- 1 to 100; if i % 2 != 0) {
-      sum += i * i
+    def main(args: Array[String]) {
+        println(test)
     }
-    sum
-  }
+
+    def test(): Int = {
+        var sum = 0
+        for (i <- 1 to 100; if i % 2 != 0) {
+            sum += i * i
+        }
+        sum
+    }
 
 }

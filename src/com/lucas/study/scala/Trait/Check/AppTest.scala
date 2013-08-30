@@ -8,12 +8,12 @@ package com.lucas.study.scala.Trait.Check
  * To change this template use File | Settings | File Templates.
  */
 object AppTest extends App {
-  val apartmentApplication = new Check with CreditCheck with CriminalRecordCheck
-  println(apartmentApplication.check())
+    val apartmentApplication = new Check with CreditCheck with CriminalRecordCheck
+    println(apartmentApplication.check())
 
-  val employmentApplication = new Check with CriminalRecordCheck with EmploymentCheck
-  println(employmentApplication check())
-  println(new Check {
-    override def toString() = "It is only a test ! "
-  })
+    val employmentApplication = new Check with CriminalRecordCheck with EmploymentCheck
+    println(employmentApplication check())
+    println(new Check {
+        override def toString() = "It is only a test ! "
+    })
 }

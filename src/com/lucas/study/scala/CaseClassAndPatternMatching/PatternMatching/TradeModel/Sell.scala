@@ -7,6 +7,6 @@ package com.lucas.study.scala.CaseClassAndPatternMatching.PatternMatching.TradeM
  * Time: 下午3:27
  * To change this template use File | Settings | File Templates.
  */
-case class Sell(stockSymbol:String,quantity:Int) extends Trade{
+case class Sell(stockSymbol: String, quantity: Int) extends Trade {
 
 }

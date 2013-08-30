@@ -8,5 +8,5 @@ package com.lucas.study.scala.Trait.MethodBounding
  * To change this template use File | Settings | File Templates.
  */
 abstract class Writer {
-  def writeMessage(message: String)
+    def writeMessage(message: String)
 }

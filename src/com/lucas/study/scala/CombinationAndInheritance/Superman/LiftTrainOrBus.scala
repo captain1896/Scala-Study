@@ -8,7 +8,7 @@ package com.lucas.study.scala.CombinationAndInheritance.Superman
  * To change this template use File | Settings | File Templates.
  */
 trait LiftTrainOrBus {
-  def liftTrainOrBus() {
-    println("Lift The Train Or Bus!")
-  }
+    def liftTrainOrBus() {
+        println("Lift The Train Or Bus!")
+    }
 }

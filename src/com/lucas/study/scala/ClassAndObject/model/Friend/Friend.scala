@@ -8,7 +8,7 @@ package com.lucas.study.scala.ClassAndObject.model.Friend
  * To change this template use File | Settings | File Templates.
  */
 trait Friend {
-  val name: String
+    val name: String
 
-  def listen() = println("Your friend " + name + " is listening!")
+    def listen() = println("Your friend " + name + " is listening!")
 }

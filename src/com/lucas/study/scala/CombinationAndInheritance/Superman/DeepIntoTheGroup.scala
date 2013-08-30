@@ -8,7 +8,7 @@ package com.lucas.study.scala.CombinationAndInheritance.Superman
  * To change this template use File | Settings | File Templates.
  */
 trait DeepIntoTheGroup {
-   def deepIntoTheGroup() {
-     println("Deep Into The Group!")
-   }
+    def deepIntoTheGroup() {
+        println("Deep Into The Group!")
+    }
 }

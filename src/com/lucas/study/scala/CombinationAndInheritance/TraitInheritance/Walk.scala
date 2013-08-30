@@ -8,7 +8,7 @@ package com.lucas.study.scala.CombinationAndInheritance.TraitInheritance
  * To change this template use File | Settings | File Templates.
  */
 trait Walk {
-   def walk() {
-     println("Walking...")
-   }
+    def walk() {
+        println("Walking...")
+    }
 }

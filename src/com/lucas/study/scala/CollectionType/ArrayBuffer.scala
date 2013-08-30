@@ -10,17 +10,17 @@ import scala.collection.mutable.ArrayBuffer
  * To change this template use File | Settings | File Templates.
  */
 object ArrayBuffer {
-  def main(args: Array[String]) {
-    test
-  }
+    def main(args: Array[String]) {
+        test
+    }
 
-  def test() {
-    val buf = new ArrayBuffer[Int]()
-    buf += 1
-    buf += 2
-    buf += 90
-    println(buf)
-    println(buf.length)
-    println(buf(2))
-  }
+    def test() {
+        val buf = new ArrayBuffer[Int]()
+        buf += 1
+        buf += 2
+        buf += 90
+        println(buf)
+        println(buf.length)
+        println(buf(2))
+    }
 }

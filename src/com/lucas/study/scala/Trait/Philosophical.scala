@@ -8,7 +8,7 @@ package com.lucas.study.scala.Trait
  * To change this template use File | Settings | File Templates.
  */
 trait Philosophical {
-   def philosophize() {
-     println("I' consume memory,therefore i am !")
-   }
+    def philosophize() {
+        println("I' consume memory,therefore i am !")
+    }
 }

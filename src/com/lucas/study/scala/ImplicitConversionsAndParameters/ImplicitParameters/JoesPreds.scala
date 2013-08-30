@@ -8,6 +8,6 @@ package com.lucas.study.scala.ImplicitConversionsAndParameters.ImplicitParameter
  * To change this template use File | Settings | File Templates.
  */
 object JoesPreds {
-  implicit val prompt = new PreferredPrompt("Yes,Master>")
-  implicit val drink = new PreferredDrink("tea")
+    implicit val prompt = new PreferredPrompt("Yes,Master>")
+    implicit val drink = new PreferredDrink("tea")
 }

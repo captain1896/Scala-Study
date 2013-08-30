@@ -8,31 +8,31 @@ package com.lucas.study.scala.Trait.Person
  * To change this template use File | Settings | File Templates.
  */
 class Person {
-  def add(x:Int) {
-    println(x)
-  }
+    def add(x: Int) {
+        println(x)
+    }
 }
 
 trait TTeacher extends Person {
-  def teach()
+    def teach()
 }
 
 trait TPianoPlayer extends Person {
-  def playPiano() {
-    println("I'm playing Piano!")
-  }
+    def playPiano() {
+        println("I'm playing Piano!")
+    }
 }
 
 trait TAddRobbotOne extends Person {
-  override def add(x:Int) {
-    super.add(x +1)
-  }
+    override def add(x: Int) {
+        super.add(x + 1)
+    }
 }
 
 trait TAddRobbotTwo extends Person {
-  override def add(x:Int) {
-    super.add(x * 2)
-  }
+    override def add(x: Int) {
+        super.add(x * 2)
+    }
 }
 
 
@@ -42,18 +42,18 @@ class AddRobbot extends Person with TAddRobbotOne with TAddRobbotTwo {
 
 
 class PianoPlayingTeacher extends Person with TTeacher with TPianoPlayer {
-  override def teach() {
-    println("I'm teaching piano!")
-  }
+    override def teach() {
+        println("I'm teaching piano!")
+    }
 }
 
 object Person {
-  def main(args:Array[String]) {
-    val pianoTeacher = new PianoPlayingTeacher
-    pianoTeacher.playPiano()
-    pianoTeacher.teach()
+    def main(args: Array[String]) {
+        val pianoTeacher = new PianoPlayingTeacher
+        pianoTeacher.playPiano()
+        pianoTeacher.teach()
 
-    val addRobbot = new AddRobbot
-    addRobbot.add(123)
-  }
+        val addRobbot = new AddRobbot
+        addRobbot.add(123)
+    }
 }

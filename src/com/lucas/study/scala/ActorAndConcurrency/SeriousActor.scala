@@ -10,16 +10,16 @@ import scala.actors.Actor
  * To change this template use File | Settings | File Templates.
  */
 object SeriousActor extends Actor {
-  def act() {
-    for (i <- 1 to 5) {
-      println("To be or not to be.")
-      Thread.sleep(1000L)
+    def act() {
+        for (i <- 1 to 5) {
+            println("To be or not to be.")
+            Thread.sleep(1000L)
+        }
     }
-  }
 
-  def main(args: Array[String]) {
-    SillyActor.start()
-    SeriousActor.start()
-  }
+    def main(args: Array[String]) {
+        SillyActor.start()
+        SeriousActor.start()
+    }
 
 }

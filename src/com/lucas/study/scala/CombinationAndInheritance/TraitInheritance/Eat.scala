@@ -8,7 +8,7 @@ package com.lucas.study.scala.CombinationAndInheritance.TraitInheritance
  * To change this template use File | Settings | File Templates.
  */
 trait Eat {
-  def eat() {
-    println("eating...")
-  }
+    def eat() {
+        println("eating...")
+    }
 }

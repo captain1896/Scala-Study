@@ -13,10 +13,10 @@ package com.lucas.study.scala.Extrators.Email
  * 通常抽取器對象還會定義構建值的對偶方法，apply()，但並非必須。
  */
 object Domain {
-  //注入方法（可選）
-  def apply(parts: String*): String = parts.reverse.mkString(".")
+    //注入方法（可選）
+    def apply(parts: String*): String = parts.reverse.mkString(".")
 
-  //抽取方法（必須要有）
-  def unapply(whole: String): Option[Seq[String]] = Some(whole.split("\\.").reverse)
+    //抽取方法（必須要有）
+    def unapply(whole: String): Option[Seq[String]] = Some(whole.split("\\.").reverse)
 
 }

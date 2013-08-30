@@ -7,6 +7,6 @@ package com.lucas.study.scala.ImplicitConversionsAndParameters.ImplicitParameter
  * Time: 下午3:18
  * To change this template use File | Settings | File Templates.
  */
-class PreferredPrompt(val preference:String) {
+class PreferredPrompt(val preference: String) {
 
 }

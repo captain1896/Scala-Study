@@ -8,14 +8,14 @@ package com.lucas.study.scala.CollectionType
  * To change this template use File | Settings | File Templates.
  */
 object RichStringTest {
-  def main(args: Array[String]) {
-    val hasUpperCaseOrNot = hasUpperCase("Robert Frost")
-    println(hasUpperCaseOrNot)
-  }
+    def main(args: Array[String]) {
+        val hasUpperCaseOrNot = hasUpperCase("Robert Frost")
+        println(hasUpperCaseOrNot)
+    }
 
-  def hasUpperCase(s: String) = {
-    s.exists(_.isUpperCase)
-  }
+    def hasUpperCase(s: String) = {
+        s.exists(_.isUpperCase)
+    }
 
 
 }

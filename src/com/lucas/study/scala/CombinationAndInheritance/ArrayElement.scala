@@ -23,56 +23,56 @@ import com.lucas.study.scala.CombinationAndInheritance.DynamicallyBound.ArrayEle
  * @param conts
  */
 class ArrayElement(conts: Array[String]) extends Element {
-  def contents: Array[String] = conts
+    def contents: Array[String] = conts
 
-  //++c操作鏈接兩個數組。Scala中的數組用Java數組表示，但是支持的方法更多。
-  //具體來說，Scala中的數組繼承自Scala.Seq類，因此能夠表示類似序列的結構并包含了許多訪問和轉換序列的方法。
-  //above方法，把一個元素放在另一個上面是鏈接這兩個元素的contents值，因此above方法的實現可以這樣實現：
-  override def above(that: Element): Element = {
-    new ArrayElement(this.contents ++ that.contents)
-  }
+    //++c操作鏈接兩個數組。Scala中的數組用Java數組表示，但是支持的方法更多。
+    //具體來說，Scala中的數組繼承自Scala.Seq類，因此能夠表示類似序列的結構并包含了許多訪問和轉換序列的方法。
+    //above方法，把一個元素放在另一個上面是鏈接這兩個元素的contents值，因此above方法的實現可以這樣實現：
+    override def above(that: Element): Element = {
+        new ArrayElement(this.contents ++ that.contents)
+    }
 
-  //指令式風格
-  override def beside(that:Element) = {
-    val contents = new Array[String](this.contents.length)
-    for(i <- 0 until this.contents.length)
-      contents(i) = this.contents(i) + that.contents(i)
-    new ArrayElement(contents)
+    //指令式風格
+    override def beside(that: Element) = {
+        val contents = new Array[String](this.contents.length)
+        for (i <- 0 until this.contents.length)
+            contents(i) = this.contents(i) + that.contents(i)
+        new ArrayElement(contents)
 
-    val vars = new ArrayElement(
-      for (
-        (line1, line2) <- this.contents zip that.contents
-      ) yield line1 + line2
-    )
-    println (vars)
-    vars
-  }
+        val vars = new ArrayElement(
+            for (
+                (line1, line2) <- this.contents zip that.contents
+            ) yield line1 + line2
+        )
+        println(vars)
+        vars
+    }
 
-  override  def toString = contents mkString "\n"
+    override def toString = contents mkString "\n"
 
 
 }
 
 object ArrayElement {
-  def main(args: Array[String]) {
-    val arg = Array[String]("Man", "Woman", "Fish", "海龜")
-    val element = new ArrayElement(arg)
-    println(element.contents.toString)
-    element.contents.foreach(println _)
-    println(element.height)
-    println(element.width)
+    def main(args: Array[String]) {
+        val arg = Array[String]("Man", "Woman", "Fish", "海龜")
+        val element = new ArrayElement(arg)
+        println(element.contents.toString)
+        element.contents.foreach(println _)
+        println(element.height)
+        println(element.width)
 
-    val ae = new ArrayElement(Array("hello", "world"))
-    val ad = new ArrayElement(Array("P1", "P2"))
-    println("------------")
-    println(ae.height)
-    println(ae.width)
-    println(ad.above(ad))
-    println(ae.beside(ad))
+        val ae = new ArrayElement(Array("hello", "world"))
+        val ad = new ArrayElement(Array("P1", "P2"))
+        println("------------")
+        println(ae.height)
+        println(ae.width)
+        println(ad.above(ad))
+        println(ae.beside(ad))
 
-    val ee = new ArrayElement(Array("hello")) above new ArrayElement(Array("world!"))
-    println(ee)
-  }
+        val ee = new ArrayElement(Array("hello")) above new ArrayElement(Array("world!"))
+        println(ee)
+    }
 }
 
 

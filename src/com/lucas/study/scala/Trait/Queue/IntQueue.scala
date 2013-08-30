@@ -8,6 +8,7 @@ package com.lucas.study.scala.Trait.Queue
  * To change this template use File | Settings | File Templates.
  */
 abstract class IntQueue {
-  def get():Int
-  def put(x:Int)
+    def get(): Int
+
+    def put(x: Int)
 }

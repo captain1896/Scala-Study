@@ -8,23 +8,23 @@ package com.lucas.study.scala.CaseClassAndPatternMatching.PatternMatching
  * To change this template use File | Settings | File Templates.
  */
 class Sample {
-  val max = 100
-  val MIN = 0
+    val max = 100
+    val MIN = 0
 
-  def process(input: Int) {
-    input match {
-      case this.max => println("You matched max")
-      case MIN => println("You matched MIN")
-      case _ => println("Unmatched!")
+    def process(input: Int) {
+        input match {
+            case this.max => println("You matched max")
+            case MIN => println("You matched MIN")
+            case _ => println("Unmatched!")
+        }
     }
-  }
 
 }
 
 object Sample {
-  def main(args: Array[String]) {
-    new Sample().process(100)
-    new Sample().process(0)
-    new Sample().process(10)
-  }
+    def main(args: Array[String]) {
+        new Sample().process(100)
+        new Sample().process(0)
+        new Sample().process(10)
+    }
 }
