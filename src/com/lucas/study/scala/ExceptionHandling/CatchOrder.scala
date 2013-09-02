@@ -13,7 +13,7 @@ object CatchOrder {
             val str = "hello"
             println(str(31))
         } catch {
-            case ex: Exception => println("Exception caught!")
+            case ex: Exception => println("Exception Caught!")
             case ex: StringIndexOutOfBoundsException => println("Invalid Index")
         }
 
