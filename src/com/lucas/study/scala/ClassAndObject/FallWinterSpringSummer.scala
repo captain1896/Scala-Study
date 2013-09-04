@@ -12,4 +12,13 @@ import CheckSumAccumulator.calculate
 object FallWinterSpringSummer extends Application {
     for (season <- List("fall", "winter", "spring"))
         println(season + ":" + calculate(season))
+
+    def add(b: Byte): Int = {
+        var sum = 0
+        //b = 1 //編譯器無法編譯通過
+        sum += b
+        sum
+    }
+
+    println(add(12))
 }
