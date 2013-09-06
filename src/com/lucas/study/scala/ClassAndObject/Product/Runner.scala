@@ -10,6 +10,7 @@ package com.lucas.study.scala.ClassAndObject.Product
 object Runner {
     def main(args: Array[String]) {
         run
+        runnable
     }
 
     def run() {
@@ -18,5 +19,10 @@ object Runner {
 
         val lifeOfPi = Movie("lifeOfPi", 55.9)
         println("lifeOfPi's name:" + lifeOfPi.name + "|lifeOfPi's ticketPrice:" + lifeOfPi.ticketPrice)
+    }
+
+    def runnable() {
+        val iMac = Product(10000.0)
+        println(iMac.getPrice)
     }
 }
