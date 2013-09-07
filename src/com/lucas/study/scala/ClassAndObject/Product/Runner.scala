@@ -24,5 +24,7 @@ object Runner {
     def runnable() {
         val iMac = Product(10000.0)
         println(iMac.getPrice)
+        val ijTuple = for (i <- List.range(1, 5); j <- List.range(1, i)) yield (i, j)
+        ijTuple.foreach(println)
     }
 }
