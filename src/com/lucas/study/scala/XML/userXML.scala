@@ -1,5 +1,7 @@
 package com.lucas.study.scala.XML
 
+import scala.xml.Node
+
 /**
  * Created with IntelliJ IDEA.
  * User: Lucas
@@ -29,10 +31,25 @@ object userXML {
         println(symbolNodes.getClass)
         val nodes = symbolNodes.toList
         println(nodes)
+
+        nodes.foreach((node: Node) => {
+            println(node.text)
+        })
+    }
+
+    def getXMLFromWeb() {
+        //val url = "http://www.leikunsheng.com/?feed=rss2"
+        val url = "http://blog.lezhi.me/?feed=rss2"
+        val data = scala.io.Source.fromURL(url).mkString
+        val scalaXMLData = scala.xml.XML.load(data)
+        println(scalaXMLData)
+        val nodes = scalaXMLData.\\("item")
+        println(nodes)
     }
 
     def main(args: Array[String]) {
         xml
+        getXMLFromWeb
     }
 
 
