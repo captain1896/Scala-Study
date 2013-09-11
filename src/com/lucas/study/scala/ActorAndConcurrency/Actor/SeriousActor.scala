@@ -25,6 +25,16 @@ object SeriousActor extends Actor {
                 Thread.sleep(1000)
             }
         }
+
+        val echoActor = actor {
+            while (true) {
+                receive {
+                    case msg => println("Received message:" + msg)
+                }
+            }
+        }
+
+        echoActor ! "Hello echo Actor!"
     }
 
     def main(args: Array[String]) {
